@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    height: 100%;
+    background: linear-gradient(to bottom, #f8ffe8 0%,#e3f5ab 31%,#b7df2d 100%);
+}
+
+.row {
+    width: 99%;
+    display: inline-block;
+}
+
+.title-bar {
+    height: 10vh;
+    text-align: center;
+    font-size: 28px;
+    color: #b2b2b2;
+}
+
+.logo {
+    position: absolute;
+    top: 6px;
+    right: 4px;
+    display: inline;
+}
+.content {
+    height: 85vh;
+    border-radius: 15px;
+    background:rgba(255,255,255,0.4);
+}
+
+.content-title {
+    width: 100%;
+    color: lightgray;
+    font-style: normal;
+    font-size: 22px;
+    padding-top: 12px;
+    text-align: center;
+}

@@ -1,0 +1,82 @@
+.idcard-box {
+    width: 100%;
+    height: 540px;
+    margin: 16px;
+    border-radius: 15px;
+    background:rgba(255,255,255,0.6);
+    -webkit-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.31);
+    -moz-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.31);
+    box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.31);
+}
+
+.caption-box {
+    width: 100%;
+    height: 40px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background: red;
+}
+
+.caption-text {
+    font-size: 26px;
+    color:white;
+    padding-left: 18px;
+    padding-top: 4px;
+}
+
+.card-holder {
+    width: 100%;
+    height: 410px;
+    margin: 20px;
+}
+
+.card-holder img {
+    display:block;
+    margin:auto;
+    display: block;
+	max-height:400px;
+	width: auto;
+	height: auto;
+}
+
+#status-bar {
+    margin: 12px;
+}
+
+.status-message {
+    color: darkgreen;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.progress { 
+	height: 20px;  /* Can be anything */
+	position: relative;
+	background: #555;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+    border-radius: 25px;
+    margin: 5px;
+	padding: 8px;
+	box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+
+.progress > span {
+    display: block;
+    height: 100%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgb(43,194,83);
+    background-image: linear-gradient(
+      center bottom,
+      rgb(43,194,83) 37%,
+      rgb(84,240,84) 69%
+    );
+    box-shadow: 
+      inset 0 2px 9px  rgba(255,255,255,0.3),
+      inset 0 -2px 6px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+  }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ReadIdcardService, IDCardEventListener } from './services/read-idcard.service'
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -11,25 +10,29 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 export class AppComponent implements OnInit, IDCardEventListener {
   ws = new ReadIdcardService();
   status = '';
-  progress = 0;
-  imageUrl = '';
-  
+  progressValue = '0%';
+  imageCard = '';
+  showStatusBar = false;
+
   ngOnInit(){
     //called after the constructor and called  after the first ngOnChanges() 
     this.ws.addListener(this);
     this.ws.start();
- }
+    this.showStatusBar = false;
+  }
 
   onCardStatusChanged(readerName: string, state: boolean) : void {
-    this.status = state ? 'Card inserted' : 'Card removed';
+      this.showStatusBar = state;
+      if (state)
+         this.imageCard = '';
   }
   onCardLoadProgress(progress: number) : void {
-    this.status = 'Loading data ...'; 
-    this.progress = progress;
+    this.progressValue = progress.toString() + '%';
   }
   onCardLoadCompleted(profile: string, base64Card: string, base64Photo: string) : void {
     this.status = profile;
-    this.imageUrl = 'data:image/png;base64,' + base64Card + '';
+    this.imageCard = 'data:image/png;base64,' + base64Card;
+    this.showStatusBar = false;
   }
   onCardLoadError(error: number, message: string) : void {
     this.status = message;
