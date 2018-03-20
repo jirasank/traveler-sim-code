@@ -1,0 +1,102 @@
+@import "../../assets/scss/util/color";
+@import "../../assets/scss/setting";
+@import "~foundation-sites/scss/util/util";
+
+:host{
+  background: $mc-white;
+}
+
+img {
+  width: 52px;
+}
+.span-text{
+  padding-left: 20px;
+}
+
+.sub-text {
+  font-size: 0.825em;
+  padding-left: 80px;
+}
+
+.contain-box{
+  line-height: normal;
+  padding: 50px 25px;
+  @include breakpoint(small only){
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.padding15{
+  padding-top: 15px;
+}
+
+.input-box{
+  position: relative;
+  left: 0;
+  right: 0;
+  font-size: inherit;
+  border: 2px solid $mc-light-gray;
+  border-radius: 5px;
+  min-height: 75px;
+  max-width: 550px;
+  margin: 25px auto auto;
+  padding-left: 35px;
+
+  &:active, &:focus {
+    border: 2px solid $mc-green-yellow;
+    outline: none;
+  }
+
+  @include breakpoint(small only){
+    min-height: 55px;
+
+  }
+}
+
+.row-btn {
+  padding-top: 40px;
+}
+.mc-btn {
+  border-radius: 5px;
+  background-color: $mc-light-gray;
+  padding: 20px;
+  min-width: 300px;
+  -webkit-appearance: none;
+  color: $mc-gray;
+  cursor: pointer;
+  @include breakpoint(small only){
+    width: 100%;
+    max-width: 300px;
+    min-width: inherit;
+  }
+}
+
+.submitBtn-active  {
+  background-color: $mc-green-yellow;
+  color: $mc-white;
+}
+
+#exampleModal1{
+  overflow-y: hidden;
+}
+
+
+
+.main{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   // background-color: $ms-light-green-1;
+    overflow: auto;
+    background: linear-gradient(to bottom, $ms-light-green-1 50%, #e6e6e6 50%);
+    // background: linear-gradient(to bottom, #99c7e2 0%,#00e9a4 31%,#b7df2d 100%);  
+     // padding-left: 10px;  
+     // padding-right: 10px;  
+     //border: 4px solid black;
+    //    @media screen and (max-width: 900px){      
+    //    width: 900px;  
+    //  }       
+   
+}

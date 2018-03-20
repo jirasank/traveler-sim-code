@@ -1,0 +1,109 @@
+// .imageSim{
+//     background: url("../../../../assets/images/sim_icon.png") no-repeat center center ;       
+//     background-size:contain;   
+//     width: 2em;
+//     height:2em;
+// }
+// .imagePhone{
+//     background: url("../../../../assets/images/phone_green.png") no-repeat center center ;       
+//     background-size:contain;   
+//     width: 1.5em;
+//     height:1.5em;
+// }
+// .imageDollar{
+//     background: url("../../../../assets/images/dollar.png") no-repeat center center ;       
+//     background-size:contain;   
+//     width: 1.5em;
+//     height:1.5em;
+// }
+// input{
+//     height: 3.5vh;
+//     width: 80%;
+    
+// }
+// .circle{
+//     border-radius: 50%;
+//     width: 1.5vw;
+//     height: 2.8vh;
+//     background: #77cc8f; 
+//     position: relative; 
+//   //  float: left;   
+// }
+// .inner-circle {
+//    position: absolute;
+//    background: #a9aaab;
+//    border-radius: 50%;
+//    width: 0.5vw;
+//    height: 0.9vh;
+//    top: 35%;
+//    left: 35%; 
+//  }
+//  .circleStep0{
+//     border-radius: 50%;
+//     width: 1.5vw;
+//     height: 2.8vh;
+//     background: #a9aaab; 
+//     position: relative; 
+//   //  float: left;   
+// }
+// .inner-circleStep0 {
+//    position: absolute;
+//    background: #77cc8f;
+//    border-radius: 50%;
+//    width: 0.5vw;
+//    height: 0.9vh;
+//    top: 35%;
+//    left: 35%; 
+//  }
+//  .backColorError{
+//      background-color: #ffd966;
+//  }
+@import "../../../../assets/scss/util/color";
+.imageSim{
+  //  background: url("../../../../assets/images/sim-gray.png") no-repeat center center ;       
+  //  background-size:contain;   
+    width: 1.5em;
+    height:1.5em;
+}
+.imageDollar{
+    background: url("../../../../assets/images/dollar.png") no-repeat center center ;       
+    background-size:contain;   
+    width: 1.5em;
+    height:1.5em;
+}
+input{
+    height: 3em;
+    width: 100%;
+    background: white;
+    font-size:0.9em;
+    color:gray;
+}
+// th, td {
+//     border: 1px solid black;
+//     border-collapse: collapse;
+// }
+.circle{
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    background: $ms-light-green-1; 
+    position: relative; 
+  //  float: left;   
+}
+.circleError{
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    background: $red1-color; 
+    position: relative; 
+  //  float: left;   
+}
+ .circleStep0{
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    background: #a9aaab; 
+    position: relative; 
+  //  float: left;   
+}
+

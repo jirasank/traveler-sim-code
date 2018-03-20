@@ -1,0 +1,150 @@
+<!--<table style="width:100%;">
+    <div [ngClass]="{'backColorError': simProgress.error}">
+    <tr   >
+       <td *ngIf="simProgress.error" style="width:4%">
+          <div class="middle" style="width:5vw;height:3.5vh;color:red;border:2px solid red;border-radius: 0.5em">Error</div>
+       </td>
+       <td *ngIf="!simProgress.error" style="width:4%">
+          <div class="middle" style="width:5vw;height:3.5vh;color:transparent;border:2px solid transparent;border-radius: 0.5em">&nbsp;&nbsp;</div>
+       </td>
+      <td style="width:2%">
+        <div class="imageSim"></div>
+      </td>
+      <td style="font-size:50%;width:10%;">
+        <input readonly style="border:2px solid gray" value={{simProgress.simNumber}}><br>
+      </td>
+
+      <td *ngIf="simProgress.mobileNumber" style="width:2%">
+        <div class="imagePhone"></div>
+      </td>
+
+      <td *ngIf="simProgress.mobileNumber && !simProgress.error" style="width:5%;font-size:70%;font-weight: bold;">
+        {{simProgress.mobileNumber}}
+      </td>
+      <td colspan="4" *ngIf="simProgress.error" style="width:11%;font-size:70%;font-weight: bold;">
+        430893545-server connection
+      </td>
+
+      <td *ngIf="!simProgress.mobileNumber && !simProgress.error" colspan="2" style="width:5%;font-size:70%;font-weight: bold;">
+        <table>
+          <tr>
+            <td style="width:1%">
+              <div [ngClass]="{'circleStep0': simProgress.step ==0,'circle': simProgress.step >= 1}">
+                <div class="inner-circleStep0"></div>
+              </div>
+            </td>
+            <td style="width:1%">
+              <div [ngClass]="{'circleStep0': simProgress.step <=1,'circle': simProgress.step >= 2}">
+                <div class="inner-circleStep0"></div>
+              </div>
+            </td>
+            <td style="width:1%">
+              <div [ngClass]="{'circleStep0': simProgress.step <=2,'circle': simProgress.step == 3}">
+                <div class="inner-circleStep0"></div>
+              </div>
+            </td>
+
+          </tr>
+        </table>
+      </td>
+      
+
+      <td *ngIf="simProgress.balance" style="width:2%">
+        <div class="imageDollar"></div>
+      </td>
+      <td *ngIf="simProgress.balance" style="width:10%;font-size:80%;">
+        {{simProgress.balance}}
+      </td>
+
+      <td *ngIf="!simProgress.balance" style="width:2%">
+        &nbsp;
+      </td>
+      <td *ngIf="!simProgress.balance" style="width:10%;font-size:80%;">
+        &nbsp;
+      </td>
+
+    </tr>
+    </div>
+  </table>
+
+-->
+<table class="tableMiddle" style="width:100%;" border="0" cellpadding="0" cellspacing="0">
+  <div [ngClass]="{'backColorError': simProgress.error}">
+    <tr>
+      <td style="width:5%">
+        <div *ngIf="simProgress.statusError !== 'cancel'" class="imageSim"> <img src="assets/images/sim-gray.png" /></div>
+        <div *ngIf="simProgress.statusError == 'cancel'" class="imageSim"> <img src="assets/images/sim-red.png" /></div>
+      </td>
+      <td style="width:20%" class="text-left">
+        <input readonly style="padding-left:5%" [ngStyle]="{'border': simProgress.statusError == 'cancel' ? '1px solid #ed405b' : '1px solid gray'}"
+          value={{simProgress.simNumber|slice:8:12}}-{{simProgress.simNumber|slice:-1}} >
+      </td>
+
+      <td *ngIf="simProgress.statusError !== 'cancel'" style="width:10%">
+        <div *ngIf="simProgress.step==4 && !simProgress.error"> <img src="assets/images/mobile-green.png" /></div>
+        <div *ngIf="simProgress.step !==4 && !simProgress.error"> <img src="assets/images/mobile-gray.png" /></div>
+        <div *ngIf="simProgress.error"> <img class="image" src="assets/images/mobile-red.png" /></div>
+      </td>
+
+      <td *ngIf="simProgress.statusError !== 'cancel' && simProgress.step=='4' && !simProgress.error" style="width:25%;font-weight: bold;">
+        <input readonly style="border:1px solid gray;color:#8cc540;font-weight: bold" class="text-center" value={{simProgress.mobileNumber}}>
+      </td>
+
+
+      <td *ngIf="simProgress.statusError !== 'cancel' && simProgress.step !==4 && !simProgress.error" style="width:20%;">
+        <table class="tableMiddle">
+          <tr>
+            <td>
+              <div [ngClass]="{'circleStep0': simProgress.step ==0,'circle': simProgress.step >= 1}"></div>
+            </td>
+            <td>
+              <div [ngClass]="{'circleStep0': simProgress.step <=1,'circle': simProgress.step >= 2}"></div>
+            </td>
+            <td>
+              <div [ngClass]="{'circleStep0': simProgress.step <=2,'circle': simProgress.step == 3}"></div>
+            </td>
+            <!--<td>&nbsp;</td>-->
+
+          </tr>
+        </table>
+      </td>
+
+      <td *ngIf="simProgress.statusError !== 'cancel' && simProgress.error" style="width:20%;">
+        <table class="tableMiddle">
+          <tr>
+            <td>
+              <div [ngClass]="{'circleStep0': simProgress.step ==0,'circleError': simProgress.step >= 1}"></div>
+            </td>
+            <td>
+              <div [ngClass]="{'circleStep0': simProgress.step <=1,'circleError': simProgress.step >= 2}"></div>
+            </td>
+            <td>
+              <div [ngClass]="{'circleStep0': simProgress.step <=2,'circleError': simProgress.step >= 3}"></div>
+            </td>
+            <!--<td>&nbsp;</td>-->
+
+          </tr>
+        </table>
+      </td>
+
+      <td *ngIf="simProgress.statusError == 'cancel' &&  simProgress.error" class="text-left">
+        <span style="color:#ed405b">Error occurred:</span> <br><span style="color:gray">{{simProgress.errorDetail}}</span>
+      </td>
+
+      <td *ngIf="simProgress.balance" style="width:2%">
+        <div class="imageDollar"></div>
+      </td>
+      <td *ngIf="simProgress.balance" class="text-left" style="font-size:80%;">
+        {{simProgress.balance}}
+      </td>
+
+      <td *ngIf="!simProgress.balance" style="width:2%">
+        &nbsp;
+      </td>
+      <td *ngIf="!simProgress.balance" style="font-size:80%;">
+        &nbsp;
+      </td>
+
+    </tr>
+  </div>
+</table>

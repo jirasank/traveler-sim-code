@@ -1,0 +1,141 @@
+@import "../../../assets/scss/util/color";
+.font-title {   
+    font-size: 2vw;
+    font-family:  serif;
+    font-weight: bold;
+    color: $mc-brown;   
+}
+
+.main {
+     height: 98%;
+     width: 100%;    
+    -khtml-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     @media screen and (max-height: 500px){      
+     height: 350px;  
+     }    
+      @media screen and (max-width: 600px){      
+       width: 400px;  
+     }    
+     
+}
+
+.div-content{
+   position: relative;  
+   height:100%;
+   background: whitesmoke;
+}
+.divItem{ 
+   // margin-top: 1.5vh;   
+    text-align: center; 
+    //align-items: center; /*vertical*/ 
+    justify-content: center;  
+    display: flex;  
+    height: 100%;
+    //border: 2px solid red;
+}
+
+.logo {
+    position: absolute;  
+    right: 1%;     
+    top: 10%;
+    width: 15%;
+    height: auto;
+     @media screen and (max-height:768px)and (max-width:1366px){
+        // width: 7%;
+    }
+}
+.callcenter{
+   position: absolute;
+   left: 6%;
+   bottom: 5%; 
+   background-image: url("../../../assets/images/ais_jaide.png");
+   background-repeat: no-repeat;
+   background-size: contain;
+   width: 90%;
+   height: 15%;
+   display:block; 
+}
+.div_told {
+      background: url("../../../assets/images/told.png") no-repeat center center ;     
+        background-size: contain;
+    // background-image: url("../../../assets/images/told.png") center center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+      width:40%;
+      height: 15%;      
+      position: absolute;
+      bottom: 1%;
+      left: 15%;  
+    //  color:black;
+      font-size: 2vw;
+    
+    
+}
+.cashOnly{
+   border: 2px solid $red1-color;
+   height: 3.5%;
+   position: absolute;
+   right: 2%;
+   bottom: 5%; 
+   font-weight: bold;
+   color:$red1-color;
+   padding: 1% 1.5%;
+   font-size: 80%;
+   border-radius: 0.5em;
+}
+.imagePayment {
+     background: url("../../../assets/images/your-cash-thb.png") no-repeat center center ;     
+        background-size: cover;
+    // background-image: url("../../../assets/images/told.png") center center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+       width:30%;
+       height: auto;      
+      font-size: 1em;
+}
+// .borderTalk 
+// { 
+//  width: 100%; 
+//  background: white;
+//   position: relative; 
+//   -moz-border-radius: 10px; 
+//   -webkit-border-radius: 10px; 
+//   border-radius: 2em;
+//   border: 3px solid #ffc000;
+// } 
+// .borderTalk:after, .borderTalk:before {
+// 	right: 100%;
+// 	top: 70%;
+// 	border: solid transparent;
+// 	content: " ";
+// 	height: 0;
+// 	width: 0;
+// 	position: absolute;
+// 	pointer-events: none;
+// }
+//  .borderTalk:after { /* สไตล์ของสามเหลี่ยม */
+//    /*border-color: rgba(136, 183, 213, 0);*/
+//    border-right-color: white;
+// 	border-width: 52px;
+// 	margin-top: -62px;
+// }
+//   .borderTalk:before 
+//    { 
+//     /*border-color: rgba(194, 225, 245, 0);*/
+// 	border-right-color: #ffc000;
+// 	border-width: 56px;
+// 	margin-top: -66px;
+//     }  
+
+// .imageCash {
+//     height:100%;
+//    // width: 100%;
+//      @media screen and (max-height:768px)and (max-width:1366px){
+//        //  width: 20%;
+//     }
+// }

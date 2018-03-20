@@ -1,0 +1,328 @@
+<!--<div class="content  ">
+
+  <div class="content-title" style="padding-top:10vh">
+    Progress 46 %
+  </div>
+  <div id="status-bar">
+    <div style="width: 60%; float:left">
+      <div class="progress">
+      </div>
+    </div>
+  </div>
+  <div class="content-title" style="width: 60%;padding-top:10vh">
+    Prepaid identification <span class="done">Done</span>
+  </div>
+  <div class="content-title" style="width: 60%;">
+    Top up<span class="done">Done</span>
+  </div>
+  <div class="content-title" style="width: 60%;">
+    Add package<span class="done">Done</span>
+  </div>
+
+  <div class="divCenter">
+    <div style="position: absolute;bottom:1.5vh;">
+      <div class="boxcon " style="height:41vh;width:35vw">
+        <div class="items" style="overflow-y:auto;height:70%;">
+          <div *ngFor="let select of packageSelect.globalPackageSelect;let i=index">
+            <div>
+              <div class="item" appSetAttribute [dirBackgroundColorAlpha]="select.color">
+                <span class="badge" appSetAttribute [dirBackgroundColor]="select.color">{{select.id}}</span>
+                <span class="title-speed">
+                   <div style="float: left; width: 6vw;">{{select.day}}</div>
+                  <div style="float: left; width: 6vw;">{{select.speed}}</div>
+                  <div style="float: left; width: 6vw;"><small>฿</small>{{select.price}}</div>
+                 </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="items">         
+            <div class="totalText textCenter">
+                 ฿{{packageSelect.globalTotal | number:'1.2-2'}}     
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div  style="position: absolute;bottom:20vh;right:7vw">
+    <div class="boxcon  divButton" >
+      <button class="button" routerLink="/staff/finish">Print receipt</button>
+    </div>
+  </div>
+  <div style="position: absolute;bottom:1.5vh;right:7vw">
+    <div class="boxcon  divButton">
+      <button class="button" (click)="clearData()"  routerLink="/staff">Done</button>
+    </div>
+  </div>
+</div>-->
+
+<!--<table class="table notSelectText">
+  <tr>
+    <td class="td">
+      <div class="main ">
+        <div class="div-content  " style="padding:2% 2% 0 2%">          
+         <p style="padding-left:20%"  class="font-title">Cash  <font color="red">1,147</font> THB,<font color="#548235"> 3 SIMS</font> are done</p>
+
+          <div class="divItem" > 
+             
+            <table class="middleHorizontal" >                        
+               <tr *ngFor="let package of Package;let i = index">
+                <div *ngIf="i % 2 === 0" class="middle" style="font-size:70%"> 
+                    <td  style="width:25%; "  >
+                      <app-item-package [packages]="Package[i]" (packageItem)="result($event)"></app-item-package>
+                    </td>
+                    <td  style="width:20%;font-size:70%" class="textLeft font_bold">
+                      <app-item-sim [simProgress]= "Package[i].sim"></app-item-sim>
+                  </td>
+                    <td *ngIf="Package[i + 1]" style="width:25%;" >
+                      <app-item-package [packages]="Package[i+1]" (packageItem)="result($event)"></app-item-package>
+                    </td>
+                    <td *ngIf="Package[i + 1]" style="font-size:70%;width:20%;" class="textLeft font_bold">
+                      <app-item-sim [simProgress]= "Package[i+1].sim"></app-item-sim>
+                  </td>
+                  <td *ngIf="!Package[i + 1]">
+                            &nbsp;
+                  </td>
+                </div>
+              </tr>
+
+            </table>
+          </div>
+            
+            <img class="logo" src="assets/images/ais.png" />
+            <div class="callcenter middle"></div>
+            <div class="div_bottom">{{callCenterMsg}} </div>
+            <div *ngIf="chkbox" class="cashOnly">CASH ONLY</div>           
+            <img class="logoCash" src="assets/images/your_cash.png" />
+        </div>
+
+      </div>
+     
+
+    </td>
+    <td rowspan="2" class="borderTop" >    
+       <table  border="0" style="border-spacing: 10px; width:100%;padding:0 8% 2% 8%">
+         <tr >
+          <td class="totalText" style="width:50%" >SIM #:</td>
+          <td style="width:50%" ><div class="middleVerticalRight cal_border_brown totalCal backcolorGray">2 SIMs &nbsp;</div></td>  
+        </tr>
+
+       <tr>
+          <td class="totalText">Transaction Total:</td>
+          <td  ><div class="middleVerticalRight cal_border_brown totalCal backcolorGray">598.00 THB &nbsp;</div></td>  
+        </tr>
+
+         <tr>
+          <td class="totalText">Cash Paid:</td>
+          <td  ><div class="middleVerticalRight cal_border_brown totalCal backcolorWhite">1,147.00 THB &nbsp;</div></td>  
+        </tr>
+
+         <tr>
+          <td class="totalText">Change:</td>
+          <td  ><div class="middleVerticalRight cal_border_brown totalCal">549.00 THB &nbsp;</div></td>  
+        </tr>
+       
+      </table>
+
+    </td>
+  </tr>
+  <tr>
+    <td class="tdScript">
+      <div class="divScript" style="padding-top:20px">
+        Scripts
+      </div>
+    </td>
+  </tr>
+  <tr >
+    <td>
+      <div class="divScript">
+        <div class="divScriptText">
+          Product "Hot Price" Package<br>- เน้นขายกลุ่มนักท่องเที่ยวที่เน้น Internet
+        </div>
+      </div>
+    </td>
+    <td class="tdTotal ">
+      <div style="padding-top:8%;">
+      
+     </div>
+    <div class="container font">
+      <div class="left" >
+       <div class="middle print" > 
+          <img style="height:6vh" src="assets/images/print.png"/>
+            <span class="color-font-brown" style="font-size:0.8vw">&nbsp;PRINT<br>Last Bill</span>
+       </div>
+      </div>
+      <div class="right" >
+      <button class="button middle"  style="background-color: #f0741f" routerLink="/staff/passport">NEW</button>
+      </div>
+    </div>
+    </td>
+  </tr>
+</table>-->
+
+
+<div style="padding: 0 1% 0 1%;position: relative;">
+  <div class="containerMain  ">
+    <div class="leftMain">
+
+
+      <table border="0" style="width:100%;border-spacing: 0 0 ;border-collapse: collapse;  ">
+        <!--<tr>
+          <td>
+            <staff-header-package (chkbox)="setChkboxCash($event)"></staff-header-package>
+          </td>
+        </tr>-->
+        <div style="width:100%;height:70vh;background-color: #e6e6e6;margin-left:-0.02em;">
+          <div style="width:100%; padding:0 1% 1.5% 1.5%; ;border-radius: 0 0 0 20px;background-color: white;">
+            <tr>
+              <div class="divMain">
+                <td class="text-center">
+
+                  <div class="middle" style="overflow:auto;height:50vh">
+                    <table border="0" cellpadding="0" cellspacing="0" style="width:100%;border-collapse: collapse;border-spacing: 0 0">
+                      <tr>
+                        <td colspan="4" style="font-size:1.2em;" class="color-font-brown">Cash <span style="color:#ed405b">&nbsp;{{packageSelect.globalAmount | number:'1.0'}}</span><span>&nbsp; THB ,{{packageSelect.globalTotal}} {{txtSim}} are done</span>                          </td>
+                      </tr>
+                      <tr *ngFor="let package of Package; let i = index">
+                        <div *ngIf="i % 2 === 0">
+                          <td style="width:30%;font-size:0.8vw">
+                            <app-item-package [packages]="Package[i]" [selectClick]="true" (packageItem)="result($event)"></app-item-package>
+                          </td>
+                          <td style="width:20%;font-size:40%;" class="cell-center">
+                            <app-item-sim [simProgress]="Package[i].sim"></app-item-sim>
+                          </td>
+
+                          <td *ngIf="Package[i + 1]" style="width:30%;font-size:0.8vw">
+                            <app-item-package [packages]="Package[i+1]" [selectClick]="true" (packageItem)="result($event)"></app-item-package>
+                          </td>
+                          <td *ngIf="Package[i + 1]" style="width:20%;font-size:40%" class="cell-center">
+                            <app-item-sim [simProgress]="Package[i+1].sim"></app-item-sim>
+                          </td>
+
+                          <td *ngIf="!Package[i + 1]" style="width:30%;font-size:0.8vw">
+                            <app-item-package style="visibility: hidden" [packages]="PackageHide" [selectClick]="false" (packageItem)="result($event)"></app-item-package>
+                          </td>
+                          <td *ngIf="!Package[i + 1]" style="visibility: hidden;width:20%;font-size:40%" class="cell-center">
+                            <app-item-sim style="visibility: hidden" [simProgress]="PackageHide.sim"></app-item-sim>
+                          </td>
+
+                        </div>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+
+                <div class="callcenter "></div>
+                <div class="div_bottom  "></div>
+                <div class="div_told middle">{{this.packageSelect.globalCallCenterMsg}} </div>
+                <div *ngIf="packageSelect.globalCash" class="cashOnly">CASH ONLY</div>
+              </div>
+            </tr>
+          </div>
+          <div style="background: white;">
+            <div style="border-radius:0 15px 0 0;background: #e6e6e6; " class="shadow">
+              <div style="padding:2% 1.5% 0 0;border-radius:0 15px 0 0;background: #e6e6e6; " class="boxShadow ">
+                <div class="divScript">
+                  <table style="height:100%">
+                    <tr>
+                      <td style="width:20%;color:#8cc540" class="text-center">Scripts</td>
+                      <td style="color:#ff9a50" class="text-left"> Product "Hot Price" Package
+                        <br>เน้นขายกลุ่มนักท่องเที่ยวที่เน้น Internet
+                      </td>
+                    </tr>
+                  </table>
+                  <!--<div style="width:100%;background: #e6e6e6; " class="shadowRight"></div>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </table>
+
+    </div>
+    <div class="rightMain">
+      <div style="width:100%;height:100%;background-color: #e6e6e6;">
+        <div class="divHeightRight shadowBottomRight" style="position:relative;">
+
+          <div style="width:100%;padding-top:35%">
+            <div style="padding:4%;">
+              <div class="containerTab" style="color : gray;">
+                <div class="left">
+                  <div class="middleVerticalLeft">SIM#</div>
+                </div>
+                <div class="right">
+                  <div class="middle" style="color:#8cc540; padding-right:15px;font-weight: bold">+{{packageSelect.globalTotal}}</div>
+                  <div class="middle" style="background: #8cc540;padding:1vw;width:5vw"> <img style="height:2vw;width:2vw" src='assets/images/sim-white.png'></div>
+                </div>
+              </div>
+              <div class="horizontal_dotted_line" style="border-color:lightgray"></div>
+              <div class="containerTab" style="color : gray;">
+                <div class="left">
+                  <div class="middleVerticalLeft">Transaction Total</div>
+                </div>
+                <div class="right">
+                  <div class="middle" style="color:#8cc540; padding-right:15px;font-weight:bold">{{packageSelect.globalAmount | number:'1.0'}}</div>
+                  <div class="middle" style="background: #8cc540;color:white;width:5vw;padding:1vw">THB</div>
+                </div>
+              </div>
+
+              <div class="horizontal_dotted_line" style="border-color:lightgray"></div>
+              <div class="containerTab" style="color : gray;">
+                <div class="left">
+                  <div class="middleVerticalLeft" s>Cash Paid</div>
+                </div>
+                <div class="right">
+                  <div class="middle" style="color:#8cc540; padding-right:15px;font-weight:bold">{{packageSelect.globalPaid | number:'1.0'}}</div>
+                  <div class="middle" style="background: #8cc540;color:white;width:5vw;padding:1vw">THB</div>
+                </div>
+              </div>
+
+              <div class="horizontal_dotted_line" style="border-color:lightgray"></div>
+              <div class="containerTab" style="color : gray;">
+                <div class="left">
+                  <div class="middleVerticalLeft">Change</div>
+                </div>
+                <div class="right">
+                  <div class="middle" style="color:#8cc540; padding-right:15px;font-weight:bold">{{packageSelect.globalPaid - packageSelect.globalAmount | number:'1.0'}}</div>
+                  <div class="middle" style="background: #8cc540;color:white;width:5vw;padding:1vw">THB</div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="middle" style="padding-top:5%">
+              <div class="btn_container " (click)="onPrint()">
+                <div class="left" style="padding-left:2%; width:16%">
+                  <img src="assets/images/print-icon-white.png" />
+
+                </div>
+                <div class="right  middle" style="width:70%">
+                  <div style="width:100%;text-align: center">
+                    &nbsp; PRINT RECEIPT
+                  </div>
+
+                </div>
+              </div>
+              <!--<button class="btn">               
+              <img  src="assets/images/print-icon-white.png" width="30" height="30"/>
+              <span style="font-size: 0.9vw;">PRINT RECEIPT</span>
+              </button>-->
+            </div>
+          </div>
+          <div class="footer" style="padding:0 4% 0 4%">
+            <div class="horizontal_line" style="color:lightgray;margin-bottom:2%">
+            </div>
+
+            <div class="text-center">
+              <!--<button type="button" class="mc-button mc-button--darkgreen" style="width:50%;height:2.5em">NEW</button>-->
+              <button type="button" class="mc-button mc-button--darkgreen" (click)="clearData()">NEW</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

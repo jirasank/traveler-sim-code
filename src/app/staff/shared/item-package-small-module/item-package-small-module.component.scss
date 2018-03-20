@@ -1,0 +1,185 @@
+
+@import "../../../../assets/scss/util/color";
+
+#divMain{
+  border-collapse: collapse;
+  height:100%; 
+  width:100%;
+  overflow:hidden;
+}
+#divMain:hover{
+    background: lightgray;
+}
+.fontDetail{
+    font-size:1.5em;
+}
+#div_item{
+     -khtml-user-select: none; //not select text
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+#div_item:hover {
+   background: #66ff66;   
+}
+
+.circle{    
+ border-radius: 50%;
+ width: 1.4em;
+ height: 1.4em;  
+ background: $ms-light-green-2;   
+ color: white; 
+ font-size: 1.8em;  
+}
+.circleAddSub{    
+ border-radius: 50%;
+ width: 0.8em;
+ height: 0.8em;  
+ background: $mc-orange1;
+ color: white; 
+ font-size: 1.5em;  
+ padding-bottom: 0.1em;
+}
+.circleAddSub:hover{
+    cursor: pointer;
+}
+.circleAddSub:active{
+  background: orangered;
+}
+
+// .add_item{
+//   width: 12%;
+//   height: 6vh;
+//   border-radius: 10px 0 0 10px;
+//   background: $mc-orange1;
+//   color:white;
+// }
+// .add_item:hover{
+//     cursor: pointer;
+// }
+// .add_item:active{
+//   background: orangered;
+// }
+// .sub_item{
+//   width: 12%;
+//   height: 6vh;
+//   border-radius: 0 10px 10px 0;
+//   background: #b6b6b6;
+//   color:white;
+// }
+// .sub_item:hover{
+//     cursor: pointer;
+// }
+// .sub_item:active{
+//   background: gray;
+// }
+.count_item{
+  width: 1.8em;
+  height: 1.5em; 
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+  border: 1px solid gray;
+  background: white;  color:black;
+  font-size: 1em;
+  
+}
+.logo {
+    width: 40%;
+    height: 40%;
+}
+ #pointer1 {
+      width: 20%;
+       height: 6vh;
+       position: relative;
+       background: $mc-item-green; 
+       color: white;
+       font-size: 1.7vw;
+   } 
+#pointer1:after, #pointer1:before {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+ #pointer1:after { /* สไตล์ของสามเหลี่ยม */
+   border-color: rgba(136, 183, 213, 0);
+	border-right-color: $mc-item-green;
+	border-width: 3vh;
+	margin-top: -3vh;
+}
+#pointer1:before 
+   { 
+    border-color: rgba(194, 225, 245, 0);
+	border-right-color: white;
+	border-width: 3.2vh;
+	margin-top: -3.2vh;
+    }  
+
+#pointer2 {
+      width: 20%; 
+      height: 6vh;
+       position: relative; 
+       background: #c5e0b4;
+        color: black;
+       font-size: 1.7vw;
+ } 
+#pointer2:after, #pointer2:before {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+ #pointer2:after { /* สไตล์ของสามเหลี่ยม */
+   border-color: rgba(136, 183, 213, 0);
+	border-right-color: #c5e0b4;
+	border-width: 3vh;
+	margin-top: -3vh;
+}
+#pointer2:before 
+   { 
+    border-color: rgba(194, 225, 245, 0);
+	border-right-color: white;
+	border-width: 3.2vh;
+	margin-top: -3.2vh;
+    }  
+#pointer3{
+      width: 20%; 
+      height: 6vh;
+       position: relative; 
+       background: #a0cf80;
+        color: black;
+       font-size: 1.7vw;
+ } 
+#pointer3:after, #pointer3:before {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+ #pointer3:after { /* สไตล์ของสามเหลี่ยม */
+   border-color: rgba(136, 183, 213, 0);
+	border-right-color: #a0cf80;
+	border-width: 3vh;
+	margin-top: -3vh;
+}
+#pointer3:before 
+   { 
+    border-color: rgba(194, 225, 245, 0);
+	border-right-color: white;
+	border-width: 3.2vh;
+	margin-top: -3.2vh;
+    }  

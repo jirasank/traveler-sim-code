@@ -1,0 +1,55 @@
+<!--<table style= "width:92%;border-spacing: 2vw 0.5vh;"> 
+    <tr *ngIf="showHead">
+      <td   >
+        <div style="width:100%;height:100%;border-radius:0.5em ;"  class="middleVertical">
+          <div style="visibility: hidden" class="circle"></div> 
+           <div class="middleVertical color-font-brown" style="width:10%;font-size: 1.7vw;margin-left: 1%">Days </div>
+           <div class="middleVertical" style="width:15%;"><img class="logo" src="assets/images/world.png" /></div>
+           <div class="middleVertical" style="width:18%" ><img class="logo" src="assets/images/phone.png" /></div>
+           <div class="middleVertical" style="width:25%" ><img class="logo" style="width:25%" src="assets/images/ThB.png" /></div>
+                  
+        </div>        
+      </td>     
+    </tr>
+    <tr>
+      <td   >
+        <div id="div_item" style="width:100%;height:100%;border-radius:0.5em ;"  class="middleVertical">
+          <div class="circle">{{packages.id}}</div>
+           <div class="middleVertical" style="width:10%"  id="pointer1">{{day}} </div>
+           <div class="middleVertical" style="width:15%" id="pointer2">{{speed}}</div>
+           <div class="middleVertical" style="width:15%" id="pointer3">1,500</div>
+           <div class="middleVertical" style="width:20%" id="pointer1">{{packages.price}} THB</div>
+            &nbsp;           
+              <div *ngIf="count" style="width:7%" class="add_item middle" (click)="onAdd(1)">+</div>
+              <div *ngIf="count"  style="width:8%" class="count_item middle">{{count}}</div>
+              <div *ngIf="count"  style="width:8%" class="sub_item middle" (click)="onSub(1)">-</div>            
+        </div>        
+      </td>     
+    </tr>
+</table>-->
+
+<div id="divMain" [ngStyle]="{'background': !selectClick && '#e6e6e6'}">
+<table cellpadding="0" cellspacing="0" style="width:100%;height:100%;" class="tableMiddle">
+  <tr>
+    <td  style="width:10%">
+      <div class="circle middle" >{{packages.character}}</div>
+     
+    </td>
+   <td style="width:10%;color:black" class="text-center fontDetail" >{{day}}</td>
+    <td style="width:15%;color:gray" class="text-center fontDetail" >{{speed}}</td>
+     <td style="width:15%;color:gray" class="text-center fontDetail" >{{packages.credit | number:'1.0'}}</td>
+      <td style="width:18%;color:#ed405b" class="text-center fontDetail" >{{packages.price | number:'1.0'}}<span style="font-size:0.8em;color:black"><sup>THB</sup></span></td>
+       <td style="width:23%;color:black" class="text-center fontDetail" >
+         <div  class="middleVerticalLeft">        
+          <div *ngIf="showAddSub"   class="circleAddSub middle" (click)="onAdd()">+</div>
+           <div *ngIf="packages.count" class="count_item middle">{{packages.count}}</div>
+          <div *ngIf="packages.count && showAddSub"  class="circleAddSub middle" (click)="onSub()">-</div>
+         </div>
+       
+      </td>
+  </tr>
+</table>
+</div>
+
+
+

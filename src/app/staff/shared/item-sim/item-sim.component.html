@@ -1,0 +1,102 @@
+<!--<div  style="width:100%;height:10em;border:0.2em solid lightgray;overflow-y: auto;overflow-x: hidden;">
+       <table  border="0">          
+        <tr *ngFor="let sim of simProgress;let i = index" >
+          <td style="width:4%"><div class="imageSim"></div></td>
+          <td *ngIf="sim.mobileNumber" class="textLeft" style="width:10%;font-size:1.5em">{{sim.mobileNumber}}</td>
+
+          <div *ngIf="!sim.mobileNumber" style="padding-top :1em">
+            <td colspan="3"  style="width:3%;">
+              <div [ngClass]="{'circleStep0': sim.step ==0 || sim.error,'circle': sim.step >= 1}"><div  class="inner-circleStep0"></div></div>             
+            </td>
+            <td style="width:3%;">
+              <div  [ngClass]="{'circleStep0': sim.step <=1 || sim.error,'circle': sim.step >= 2}"><div  class="inner-circleStep0"></div></div>             
+            </td>
+            <td  style="width:3%;">
+              <div [ngClass]="{'circleStep0': sim.step <=2 || sim.error,'circle': sim.step == 3}"><div  class="inner-circleStep0"></div></div>             
+            </td>
+          </div>
+        </tr>      
+      </table>
+   </div>-->
+
+<!--<div  style="width:100%;background: white;overflow-y: auto;overflow-x: hidden;border-radius: 1em">
+       <table  border="0">          
+        <tr *ngFor="let sim of simProgress;let i = index" >
+          <td style="width:4%"><div class="imageSim"></div></td>
+          <td *ngIf="sim.mobileNumber" class="textLeft" style="width:10%;font-size:1.5em">{{sim.mobileNumber}}</td>
+          <td *ngIf="!sim.mobileNumber" class="textLeft" style="visibility: hidden; width:10%;font-size:1.5em">0000000000</td>
+        </tr>-->
+<!--<div *ngIf="!sim.mobileNumber" style="width:80%;padding-top :1em">
+            <td  >
+              <div [ngClass]="{'circleStep0': sim.step ==0 || sim.error,'circle': sim.step >= 1}"><div  class="inner-circleStep0"></div></div>             
+            </td>
+            <td >
+              <div  [ngClass]="{'circleStep0': sim.step <=1 || sim.error,'circle': sim.step >= 2}"><div  class="inner-circleStep0"></div></div>             
+            </td>
+            <td  >
+              <div [ngClass]="{'circleStep0': sim.step <=2 || sim.error,'circle': sim.step == 3}"><div  class="inner-circleStep0"></div></div>             
+            </td>
+          </div>-->
+<!--<tr>
+            <td></td>
+        </tr>      -->
+<!--</table>
+   </div>-->
+<div [ngStyle]="{'height': simProgress.length >2 && '15em'}" style="background: white;border-radius: 1em;width:100%;padding:1em;overflow-y: auto;overflow-x: hidden;" >
+  <div *ngFor="let sim of simProgress;let i = index" style="width:100%;">
+    <!--<div *ngIf="sim.mobileNumber" class="containerTab" style="color : gray;">-->
+     <div *ngIf="sim.balance" class="containerTab" style="color : gray;">
+      <div class="left">
+        <div class="middle" style="padding-left:6%;">
+          <img style="height:1em;width:0.8em" src='assets/images/sim-gray.png'>
+        </div>
+      </div>
+      <div class="right">
+        <div class="middleVerticalLeft" style="width:100%;color:gray;">{{sim.simNumber|slice:8:12}}-{{sim.simNumber|slice:-1}}</div>
+      </div>
+    </div>
+
+    <!--<div *ngIf="!sim.mobileNumber" class="containerTab" style="color : gray;">-->
+     <div *ngIf="!sim.balance" class="containerTab" style="color : gray;">
+      <!--process-->
+      <div class="left">
+        <div class="middle" style="padding-left:6%;">
+          &nbsp;
+        </div>
+      </div>
+      <div class="right">
+        <div class="middleVerticalLeft" style="margin-top:1em; width:100%;">
+          <div [ngClass]="{'circleStep0': sim.step ==0 || sim.error,'circle': sim.step >= 1}">           
+          </div>
+          &nbsp; &nbsp;
+          <div [ngClass]="{'circleStep0': sim.step <=1 || sim.error,'circle': sim.step >= 2}">           
+          </div>
+          &nbsp; &nbsp;
+          <div [ngClass]="{'circleStep0': sim.step <=2 || sim.error,'circle': sim.step == 3}">          
+          </div>        
+        </div>
+
+      </div>
+    </div>
+
+    <!--&nbsp;-->
+    <!--<div [ngStyle]="{'visibility': !sim.mobileNumber && 'hidden'}" class="containerTab" style="color : gray;">-->
+     <div [ngStyle]="{'visibility': !sim.balance ?'hidden':'visible'}" class="containerTab" style="color : gray;">
+      <div class="left">
+        <div class="middle" style="padding-left:6%;">
+          <img style="height:1em;width:0.8em" src='assets/images/mobile-green.png'>
+        </div>
+      </div>
+      <div class="right">
+         <div *ngIf="sim.balance" class="middleVerticalLeft" style="width:100%;color:gray;">{{sim.mobileNumber}}</div>
+        <div *ngIf="!sim.balance" class="middleVerticalLeft" style="width:100%;color:gray;">0000000000</div>
+        <!--<div *ngIf="sim.mobileNumber" class="middleVerticalLeft" style="width:100%;color:gray;">{{sim.mobileNumber}}</div>
+        <div *ngIf="!sim.mobileNumber" class="middleVerticalLeft" style="width:100%;color:gray;">0000000000</div>-->
+      </div>
+    </div>
+    <div *ngIf="i < simProgress.length -1" style="padding:1em 0 1em 0">
+      <div class="horizontal_line" style="border-color: gray"></div>
+    </div>
+    
+  </div>
+</div>

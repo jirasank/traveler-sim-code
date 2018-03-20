@@ -1,0 +1,49 @@
+<!--<p>
+  alert works!
+</p>-->
+<div class="simplert  " role="modal" [ngClass]="{'simplert--shown': isShown === true}" (click)="overlayClick($event)">
+  <div class="simplert__content " [ngClass]="{'simplert__content--radius': isUseRadius}">
+    <div *ngIf="(customButton)" class="simplert__body">      
+      <p innerHTML="{{ message }}"></p>
+    </div>
+    <div *ngIf="!(customButton)" class="simplert__error ">
+      <p innerHTML="<br>{{ message }}"></p>
+    </div>
+    <div *ngIf="!(customButton)" >
+      <button class="simplert__close" [ngStyle]="{'background-color': colorBtn}" [ngClass]="{'simplert__close--radius': isUseRadius}"
+        (click)="closePopup()">
+        Close
+      </button>
+    </div>
+   
+    <div *ngIf="(customButton)" class="middle" >
+      <table  style="width:40%" class="simplert__footer">
+        <tr>
+          <td class="textCenter">
+            <button class="simplert__close" 
+            [ngStyle]="{'background-color': '#b6b6b6'}"
+             (click)="closePopup()">Back             
+             </button>
+          </td>
+          <td class="textCenter" *ngFor="let button of customButton">             
+               <button class="simplert__close" 
+                [ngStyle]="{'background-color': '#f0741f'}"
+               (click)="button.function()">
+                {{button.name}}
+              </button>
+            
+          </td>
+        </tr>
+      </table>
+    </div>
+
+   <!--<div *ngFor="let button of customButton" class="simplert__footer">
+        <button  class="simplert__close"
+         [ngStyle]="{'background-color': colorBtn}"
+         [ngClass]="{'simplert__close--radius': isUseRadius}"
+          (click)="button.function()">
+          {{button.name}}
+        </button>       
+    </div>-->
+  </div>
+</div>

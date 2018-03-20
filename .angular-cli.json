@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "code"
+    "name": "client-pos-airport"
   },
   "apps": [
     {
@@ -18,14 +18,24 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
-      "styles": [
-        "styles.css"
+      "styles": [       
+        "assets/scss/foundation.scss"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/foundation-sites/dist/js/foundation.min.js",
+        "../node_modules/slick-carousel/slick/slick.js",
+        "../node_modules/raven-js/dist/raven.js",
+        "../node_modules/select2/dist/js/select2.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
+        "pvt": "environments/environment.pvt.ts",
+        "prod": "environments/environment.prod.ts",
+        "sit": "environments/environment.sit.ts",
+        "develop": "environments/environment.develop.ts",
+        "release": "environments/environment.release.ts"
       }
     }
   ],
@@ -36,16 +46,13 @@
   },
   "lint": [
     {
-      "project": "src/tsconfig.app.json",
-      "exclude": "**/node_modules/**"
+      "project": "src/tsconfig.app.json"     
     },
     {
-      "project": "src/tsconfig.spec.json",
-      "exclude": "**/node_modules/**"
+      "project": "src/tsconfig.spec.json"      
     },
     {
-      "project": "e2e/tsconfig.e2e.json",
-      "exclude": "**/node_modules/**"
+      "project": "e2e/tsconfig.e2e.json"     
     }
   ],
   "test": {

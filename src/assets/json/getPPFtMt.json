@@ -1,0 +1,15 @@
+{
+	"resultCode": "20000",
+	"developerMessage": "Success",
+	"data": {
+		"D_GetPPFtMtResponse": {
+			"outbuf": {
+				"PP_FEATURE_CODE": "3800041",
+				"PP_FEATURE_SUB_CODE": "88888",
+				"PP_DESCRIPTION": "3G Traveller 399B max speed 4.5GB for 30Days",
+				"PP_GROUP_FEATURE": "38",
+				"PP_TUX_CODE": "0"
+			}
+		}
+	}
+}

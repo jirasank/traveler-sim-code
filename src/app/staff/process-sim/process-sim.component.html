@@ -1,0 +1,367 @@
+<!--<table class="table notSelectText">
+  <tr>
+    <td class="td">
+      <div class="main ">
+        <div class="div-content  " style="padding:2% 2% 0 2%">
+          <p style="padding-left:20%" class="font-title">Cash
+            <font color="red">1,147</font> THB,
+            <font color="#548235"> 3 SIMS</font> are done</p>
+
+          <div class="divItem">
+
+            <table class="middleHorizontal">
+              <tr *ngFor="let package of Package; let i = index">
+                <div *ngIf="i % 2 === 0" class="middle" style="font-size:70%">
+                  <td style="width:25%; ">
+                    <app-item-package [packages]="Package[i]" (packageItem)="result($event)"></app-item-package>
+                  </td>
+                  <td style="width:20%;padding-top:0.7em;font-size:100%;font-size:80%" class="textLeft font_bold">
+                    <app-item-sim [simProgress]="Package[i].sim"></app-item-sim>
+                  </td>
+
+                  <td style="width:2%">&nbsp;</td>
+
+                  <td *ngIf="Package[i + 1]" style="width:25%;">
+                    <app-item-package [packages]="Package[i+1]" (packageItem)="result($event)"></app-item-package>
+                  </td>
+                  <td *ngIf="Package[i + 1]" style="width:20%;padding-top:0.7em;font-size:80%" class="textLeft font_bold">
+                    <app-item-sim [simProgress]="Package[i+1].sim"></app-item-sim>
+                  </td>
+
+                  <td *ngIf="!Package[i + 1]">
+                    &nbsp;
+                  </td>
+                </div>
+              </tr>
+             
+
+            </table>
+          </div>
+
+          <img class="logo" src="assets/images/ais.png" />
+          <div class="callcenter middle"></div>
+          <div class="div_bottom">{{callCenterMsg}} </div>
+          <div *ngIf="chkbox" class="cashOnly">CASH ONLY</div>
+          <img class="logoCash" src="assets/images/your_cash.png" />
+        </div>
+
+      </div>
+
+
+    </td>
+    <td rowspan="2" class="borderTop">
+      <div style="font-size: 1vw;font-weight:bold;color:black;margin-top:-10%;padding-left:5%">Provisioning SIMs</div>
+      <div class="divItemPackage" style="overflow-y:auto;">
+        <div *ngFor="let package_item of Package; let i = index" style="position:relative">
+          <app-item-package-small-module [packages]="package_item" [showHead]=false></app-item-package-small-module>
+          <div style="position:absolute;right:15%;top:5%;border:2px solid #548235;width:8%;height:5vh" class="font_normal middle">{{package_item.sim.length}}</div>
+          <div *ngFor="let sim of package_item.sim; let j = index">
+            <app-item-sim-progress [simProgress]="sim"></app-item-sim-progress>
+            <div *ngIf="sim.error && typeButtonError=='error'" class="middle" style="background-color: #f8cbad;width:100%;height:15vh">
+              <table>
+                <tr>
+                  <td colspan="3" style="font-size: 1vw;color:black">Error occurred : Please select a solution to resume the process.</td>
+                </tr>
+                <tr>
+                  <td><button class="buttonEroor " style="background-color: orangered" (click)="onRetry(sim,i,j)">Retry</button></td>
+                  <td><button class="buttonEroor " style="background-color: #a0cf80" (click)="onNew(sim)">New Sim</button></td>
+                  <td><button class="buttonEroor " style="background-color: grey" (click)="onSkip(sim)">Skip</button></td>
+                </tr>
+              </table>
+            </div>
+
+            <div *ngIf="sim.error && typeButtonError=='skip'" class="middle" style="background-color: #f8cbad;width:100%;height:15vh">
+              <table>
+                <tr>
+                  <td class="textLeft" colspan="3" style="font-size: 1vw;color:black;"><b>Skip this SIM...</b><br> Confirm to skip this SIM by press SKIP</td>
+                </tr>
+                <tr>
+                  <td style="width:40%"><button class="button middle" style="width:5vw;background-color:grey;font-size:2.5vh" (click)="onBack()">Back</button></td>
+                  <td>&nbsp;</td>
+                  <td style="width:40%"><button class="button middle" style="width:5vw;background-color: #f0741f;font-size:2.5vh" (click)="onCancel()">Skip</button></td>
+                </tr>
+              </table>
+            </div>
+
+            <div *ngIf="sim.error && typeButtonError=='new'" class="middle" style="background-color: #c5e0b4;width:100%;height:15vh">
+              <table>
+                <tr>
+                  <td class="textLeft" colspan="3" style="font-size: 1vw;color:black;"><b>Resume the process by NEW SIM...</b><br>Please scan new SIM serial then press Resume</td>
+                </tr>
+                <tr>
+                  <td style="width:25%"><button class="button middle" style="background-color:grey;width:90%;font-size:2.5vh" (click)="onBack()">Back</button></td>
+                  <td>
+
+                    <div style="width:50%;padding:0 10% 0 10%">                        
+                      <table class="font_normal">
+                        <tr>
+                         
+                          <td>
+                            <div class="imageSim"></div>
+                          </td>
+                          <td style="font-size:70%">
+                            <input style="width:6vw;height:3.5vh;border:2px solid gray;background-color: #ffd966" value="SIM Serial #1"><br>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+
+                  </td>
+                  <td style="width:25%"><button class="button middle" style="background-color:#548235;width:90%;font-size:2.5vh" (click)="onCancel()">Resume</button></td>
+                </tr>
+              </table>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </td>
+  </tr>
+  <tr>
+    <td class="tdScript">
+      <div class="divScript" style="padding-top:20px">
+        Scripts
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="divScript">
+        <div class="divScriptText">
+          Product "Hot Price" Package<br>- เน้นขายกลุ่มนักท่องเที่ยวที่เน้น Internet
+        </div>
+      </div>
+    </td>
+    <td class="tdTotal ">
+      <div style="padding-top:8%;">
+
+      </div>
+      <div class="container font">
+        <div class="left">
+          <div class="middle print">
+            <img style="height:6vh" src="assets/images/print.png" />
+            <span class="color-font-brown" style="font-size:0.8vw">&nbsp;PRINT<br>Last Bill</span>
+          </div>
+        </div>
+        <div class="right">
+          <button class="button middle" style="background-color: #f0741f" routerLink="/staff/passport">NEW</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>-->
+
+<div style="padding: 0 1% 0 1%;position: relative;">
+  <div class="containerMain  ">
+    <div class="leftMain">
+
+
+      <table border="0" style="width:100%;border-spacing: 0 0 ;border-collapse: collapse;  ">
+        <!--<tr>
+          <td>
+            <staff-header-package (chkbox)="setChkboxCash($event)"></staff-header-package>
+          </td>
+        </tr>-->
+          <div style="width:100%;height:70vh;background-color: #e6e6e6;margin-left:-0.02em;">
+          <div style="width:100%; padding:0 1% 1.5% 1.5%; ;border-radius: 0 0 0 20px;background-color: white;">
+            <tr>
+               <div class="divMain" >
+                <td class="text-center">
+
+                  <div class="middle" style="overflow:auto;height:53vh">
+                    <table border="0" cellpadding="0" cellspacing="0" style="width:100%;border-collapse: collapse;border-spacing: 0 0" >
+                     
+                      <tr>
+                        <td colspan="4" style="font-size:1.2em;" class="color-font-brown">Cash <span style="color:#ed405b">&nbsp;{{packageSelect.globalAmount | number:'1.0'}}</span><span>&nbsp; THB ,{{packageSelect.globalTotal}} {{txtSim}} are {{statusDone}}</span></td>
+                      </tr>
+                      <tr *ngFor="let package of Package; let i = index">
+                        <div *ngIf="i % 2 === 0">
+                          <td style="width:32%;font-size:0.8vw">
+                            <app-item-package [packages]="Package[i]" [selectClick]="true" (packageItem)="result($event)"></app-item-package>
+                          </td>
+                          <td style="width:18%;font-size:45%;padding:0;" class="cell-center"  > 
+                           <app-item-sim [simProgress]="Package[i].sim"></app-item-sim>
+                          </td>
+
+                          <td *ngIf="Package[i + 1]" style="width:32%;font-size:0.8vw">
+                            <app-item-package [packages]="Package[i+1]" [selectClick]="true" (packageItem)="result($event)"></app-item-package>
+                          </td>
+                           <td *ngIf="Package[i + 1]" style="width:18%;font-size:45%" class="cell-center">
+                            <app-item-sim [simProgress]="Package[i+1].sim"></app-item-sim>
+                          </td>    
+                                               
+                          <td *ngIf="!Package[i + 1]" style="width:32%;font-size:0.8vw">
+                            <app-item-package style="visibility: hidden;" [packages]="PackageHide" [selectClick]="false" (packageItem)="result($event)"></app-item-package>
+                          </td>
+                           <td *ngIf="!Package[i + 1]" style="width:18%;font-size:45%" class="textLeft">
+                            <app-item-sim style="visibility: hidden;" [simProgress]="PackageHide.sim" ></app-item-sim>
+                          </td>
+                         
+                        </div>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+
+                <div class="callcenter "></div>
+                <div class="div_bottom  "></div>
+                <div class="div_told middle">{{packageSelect.globalCallCenterMsg}} </div>
+                <div *ngIf="packageSelect.globalCash" class="cashOnly">CASH ONLY</div>
+              </div>
+            </tr>
+          </div>
+          <div style="background: white;">
+            <div style="border-radius:0 15px 0 0;background: #e6e6e6; " class="shadow">
+              <div style="padding:2% 1.5% 0 0;border-radius:0 15px 0 0;background: #e6e6e6; " class="boxShadow ">
+                <div class="divScript">
+                  <table style="height:100%">
+                    <tr>
+                      <td style="width:20%;color:#8cc540" class="text-center">Scripts</td>
+                      <td style="color:#ff9a50" class="text-left">
+                       <div [innerHTML]="sScript"></div>
+                      </td>
+                    </tr>
+                  </table>
+                  <!--<div style="width:100%;background: #e6e6e6; " class="shadowRight"></div>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </table>
+
+    </div>
+    <div class="rightMain">
+      <div style="width:100%;height:100%;background-color: #e6e6e6;">
+        <div class="divHeightRight shadowBottomRight " style="position:relative;">
+
+          <!--<div style="width:100%;padding: 0 3% 0 3%;" class="middle">           
+          </div>-->
+          <div style="padding-bottom:2%;width:100%" class="text-center">
+            Provisioning SIMs
+          </div>
+          <div style="width:100%; padding: 0 3% 0 3%;">
+            <div style="width:100%;background: white;overflow-y: auto;height:50vh" class="text-center">
+
+              <div style="width:100%;font-size:1.2vw;">
+                <div *ngFor="let package_item of Package; let i = index">
+                  <app-item-package-small-module [selectClick]="false" [packages]="package_item"></app-item-package-small-module>
+                  
+                  <div *ngFor="let sim of package_item.sim; let j = index">
+                    <app-item-sim-progress [simProgress]="sim" ></app-item-sim-progress>
+                    <!--<div   *ngIf="sim.error && sim.statusError=='error'"   class="middle" style="width:100%;">-->
+                     <div   *ngIf="sim.error && sim.statusError=='error'"   class="middle" style="width:100%;">
+                      <table class="tableMiddle" style="height:100%;" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td class="text-left"  style="font-size: 1vw;color:black">
+                            <span style="color:#ed405b">Error occurred:</span> <br><span style="color:gray">{{sim.errorDetail}}</span>
+                          </td>
+                          <td style="width:14%"><button class="buttonEroor " style="background-color: #f0741f" (click)="onRetry(i,j)">Retry</button></td>
+                          <td style="width:14%"><button class="buttonEroor " style="background-color: #8cc540" (click)="onNew(i,j,sim.simNo)">New<br>Sim</button></td>
+                          <td style="width:14%"><button class="buttonEroor " style="background-color: grey" (click)="onSkip(i,j)">Skip</button></td>
+                        </tr>
+                      </table>
+                    </div>
+
+                    <div *ngIf="sim.error && sim.statusError=='skip'" class="middle" style="width:100%;">
+                      <table>                       
+                        <tr>
+                          <td class="textLeft" style="font-size: 1vw;color:black;"> <span style="color:#ed405b"><b>Skip this SIM...</b></span> <br><span style="color:gray">Confirm to skip this SIM by press SKIP</span>
+                          </td>
+                          <td style="width:14%"><button class="buttonEroor " style="background-color:grey;" (click)="onBack(i,j)">Back</button></td>
+                          <td sstyle="width:14%"><button class="buttonEroor " style="background-color: #f0741f;" (click)="onCancel(i,j)">Skip</button></td>
+                        </tr>                        
+                      </table>
+                    </div>
+
+                    <div *ngIf="sim.error && sim.statusError=='new'" class="middle" style="width:100%;">
+                      <table>                       
+                        <tr>
+                           <td colspan="3" class="textLeft" style="font-size: 1vw;color:black;"> <span style="color:#ed405b"><b>Resume the process by NEW SIM...</b></span> <br><span style="color:gray">Please scan new SIM serial then press Resume</span>
+                        </tr>
+                        <tr>
+                          <td style="width:25%"><button class="button " style="background-color:grey;width:90%;font-size:1vw" (click)="onBack(i,j)">Back</button></td>
+                          <td >
+                             <div style="width:30%;">
+                              <table class="font_normal">
+                                <tr>
+
+                                  <td>
+                                    <div class="imageSim"></div>
+                                  </td>
+                                  <td style="font-size:70%">
+                                     <div *ngIf="!sim.stepRetry">
+                                        <input style="width:7em;height:2.5em;border:2px solid gray;background-color: #ffd966"  readonly value="{{sim.simNumber|slice:8:12}}-{{sim.simNumber|slice:-1}}">
+                                     </div>
+                                     <div *ngIf="sim.stepRetry ">
+                                       <input style="width:7em;height:2.5em;border:2px solid gray;background-color: #ffd966" class="input" autofocus id="simNewId{{sim.simNo}}" placeholder="SIM Serial #{{sim.simNo}}" (keypress)="_keyPress($event,i,j,sim.simNo,$event.target.value)" >
+                                    </div>
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                          </td>
+                           <td style="width:25%"><button class="button middle" style="background-color:#8cc540;width:90%;font-size:1vw" (click)="onResume(i,j,sim.simNo)">Resume</button></td>
+                        </tr>                        
+                      </table>
+                   
+                    </div>
+
+                  </div>
+
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div style="position:absolute;bottom:1%;width:100%">
+            <div style="padding:4%">
+              <div class="containerTab" style="color : gray;border-left:1px solid lightgray;border-top:1px solid lightgray">
+                <div class="left">
+                  <div class="middle" style="padding-left:6%;">SIM</div>
+                </div>
+                <div class="right">
+                  <div class="middle" style="color:#8cc540; padding-right:15px;font-weight: bold">+{{packageSelect.globalTotal}}</div>
+                  <div class="middle" style="background: #8cc540;padding:0.4vw;width:5vw"> <img style="height:2vw;width:2vw" src='assets/images/sim-white.png'></div>
+                </div>
+              </div>
+              <div class="horizontal_dotted_line" style="border-color:lightgray"></div>
+              <div class="containerTab" style="color : gray;border-left: 1px solid lightgray;border-bottom: 1px solid lightgray">
+                <div class="left">
+                  <div class="middle" style="padding-left:6%;">Total</div>
+                </div>
+                <div class="right">
+                  <div class="middle" style="color:#8cc540; padding-right:15px;font-weight:bold">{{packageSelect.globalAmount | number:'1.0'}}</div>
+                  <div class="middle" style="background: #8cc540;color:white;width:5vw;padding:0.4vw">THB</div>
+                </div>
+              </div>
+            </div>
+
+            <!--<div class="row success-footer">
+              <div class="small-6 large-6 columns text-center">
+                <button type="button" class="mc-button mc-button--gray" style="width:80%;height:2.5em">BACK</button>
+              </div>
+              <div class="small-6 large-6 columns text-center">
+                <button type="button" class="mc-button mc-button--darkgreen" style="width:80%;height:2.5em">PAY</button>
+              </div>
+            </div>
+          </div>-->
+       
+             <div *ngIf="statusDone !== 'done'"  class="text-center" style="padding:1%">
+                  <button type="button" class="mc-button mc-button--gray" >NEXT</button>
+            </div>
+             <div *ngIf="statusDone=='done'"  class="text-center" style="padding:1%">
+                  <button type="button" class="mc-button mc-button--darkgreen" (click)="onNext()">NEXT</button>
+            </div>
+          
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

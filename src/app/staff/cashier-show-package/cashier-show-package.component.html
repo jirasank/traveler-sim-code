@@ -1,0 +1,315 @@
+<!--<p>
+  cashier-show-package works!
+</p>-->
+
+
+<!--<table style= "width:100%;">
+    <tr>
+      <td  style="width:100%;;" class="middle">
+        <div id="div_item" style="width:100%;height:100%;border-radius:0.5em ;"  class="middle">
+          <div class="circle">A</div>
+           <div class="middleVertical" style="width:7%"  id="pointer1">7 </div>
+           <div class="middleVertical" style="width:10%" id="pointer2">2.5</div>
+           <div class="middleVertical" style="width:15%" id="pointer3">500</div>
+           <div class="middleVertical" style="width:20%" id="pointer1">549 THB</div>
+            &nbsp;           
+              <div   style="width:7%" class="add_item middle" (click)="onAdd(1)">+</div>
+              <div   style="width:7%" class="count_item middle">{{count}}</div>
+              <div   style="width:7%" class="sub_item middle" (click)="onSub(1)">-</div>            
+        </div>
+      </td>     
+    </tr>
+   
+</table>-->
+<!--<app-item-package-small-module [showHead]= true></app-item-package-small-module>-->
+
+
+<!--<div class="cut-corner">Some content1</div>
+<div class="cut-corner filled">Some content</div>-->
+
+
+<!--<div style="border: 2px solid black;" class="middle">
+   <div class="middle divImage" style="border:2px solid red;width:10%;height:15vh " >12</div>
+</div>-->
+
+
+
+<!--<div class="ca-number-display-container">
+  <span class="ca-number-display-text">{{displayText}}</span>
+</div>
+<div class="ca-numberpad-container noselect" (keyup)="onKeyUp($event)">
+  <div class="ca-row-container">
+    <div class="ca-item-container">
+      <div class="ca-button unary-operator" (click)="onClick($event, BUTTONS.AC)">
+        <span class="ca-button-text">AC</span>
+      </div>
+    </div>
+    <div class="ca-item-container">
+      <div class="ca-button unary-operator" (click)="onClick($event, BUTTONS.NEGATE)">
+        <span class="ca-button-text">+/-</span>
+      </div>
+    </div>
+    <div class="ca-item-container">
+      <div class="ca-button unary-operator">
+        <span class="ca-button-text" (click)="onClick($event, BUTTONS.PERCENT)">%</span>
+      </div>
+    </div>
+    <div class="ca-item-container">
+      <div class="ca-button operator" (click)="onClick($event, BUTTONS.DIVIDE)" >
+        <span class="ca-button-text">/</span>
+      </div>
+    </div>
+  </div>
+  <div class="ca-row-container">
+    <div class="ca-item-container">
+      <div class="ca-button number" (click)="onClick($event, BUTTONS.SEVEN)">
+        <span class="ca-button-text">7</span>
+      </div>
+    </div>
+    <div class="ca-item-container">
+      <div class="ca-button number" (click)="onClick($event, BUTTONS.EIGHT)">
+        <span class="ca-button-text">8</span>
+      </div>
+    </div>
+    <div class="ca-item-container">
+      <div class="ca-button number" (click)="onClick($event, BUTTONS.NINE)">
+        <span class="ca-button-text">9</span>
+      </div>
+    </div>
+    <div class="ca-item-container">
+      <div class="ca-button operator" (click)="onClick($event, BUTTONS.MULTIPLY)">
+        <span class="ca-button-text">x</span>
+      </div>
+    </div>
+  </div>
+  <div class="ca-row-container">
+    <div class="ca-item-container">
+      <div class="ca-button number" (click)="onClick($event, BUTTONS.FOUR)">
+        <span class="ca-button-text">4</span>
+      </div>
+    </div>
+    <div class="ca-item-container">
+      <div class="ca-button number" (click)="onClick($event, BUTTONS.FIVE)">
+        <span class="ca-button-text">5</span>
+      </div>
+    </div>
+    <div class="ca-item-container">
+      <div class="ca-button number" (click)="onClick($event, BUTTONS.SIX)">
+        <span class="ca-button-text">6</span>
+      </div>
+    </div>
+    <div class="ca-item-container">
+      <div class="ca-button operator" (click)="onClick($event, BUTTONS.SUBTRACT)">
+        <span class="ca-button-text">_</span>
+      </div>
+    </div>
+  </div>
+  <div class="ca-row-container">
+    <div class="ca-item-container">
+      <div class="ca-button number" (click)="onClick($event, BUTTONS.ONE)">
+        <span class="ca-button-text">1</span>
+      </div>
+    </div>
+    <div class="ca-item-container">
+      <div class="ca-button number" (click)="onClick($event, BUTTONS.TWO)">
+        <span class="ca-button-text">2</span>
+      </div>
+    </div>
+    <div class="ca-item-container">
+      <div class="ca-button number" (click)="onClick($event, BUTTONS.THREE)">
+        <span class="ca-button-text">3</span>
+      </div>
+    </div>
+    <div class="ca-item-container">
+      <div class="ca-button operator" (click)="onClick($event, BUTTONS.ADDITION)">
+        <span class="ca-button-text">+</span>
+      </div>
+    </div>
+  </div>
+  <div class="ca-row-container">
+    <div class="ca-item-container">
+      <div class="ca-button unary-operator" (click)="onClick($event, BUTTONS.SETTINGS)">
+        <span class="ca-button-text">i</span>
+      </div>
+    </div>
+    <div class="ca-item-container">
+      <div class="ca-button number" (click)="onClick($event, BUTTONS.ZERO)">
+        <span class="ca-button-text">0</span>
+      </div>
+    </div>
+    <div class="ca-item-container">
+      <div class="ca-button unary-operator" (click)="onClick($event, BUTTONS.PERIOD)">
+        <span class="ca-button-text">.</span>
+      </div>
+    </div>
+    <div class="ca-item-container">
+      <div class="ca-button operator" (click)="onClick($event, BUTTONS.EQUAL)">
+        <span class="ca-button-text">=</span>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+
+<!--<div class="calculator">
+                <div class="result">
+                    {{ result }}
+                </div>
+                <button (click)="addToCalculation('7')">7</button>
+                <button (click)="addToCalculation('8')">8</button>
+                <button (click)="addToCalculation('9')">9</button>
+                <button (click)="calculate('/')">/</button>
+                <button (click)="addToCalculation('4')">4</button>
+                <button (click)="addToCalculation('5')">5</button>
+                <button (click)="addToCalculation('6')">6</button>
+                <button (click)="calculate('*')">X</button>
+                <button (click)="addToCalculation('1')">1</button>
+                <button (click)="addToCalculation('2')">2</button>
+                <button (click)="addToCalculation('3')">3</button>
+                <button (click)="calculate('-')">-</button>
+                <button (click)="addToCalculation('0')">0</button>
+                <button (click)="addToCalculation('.')">.</button>
+                <button (click)="getTotal()">=</button>
+                <button (click)="calculate('+')">+</button>
+            </div>-->
+
+
+
+
+
+<!--<div style="width:100%;height:6em;border:2px solid gray;overflow-y: auto;overflow-x: hidden">
+       <table>          
+        <tr *ngFor="let sim of arraySim;let i = index">
+          <td><div class="imageSim"></div></td>
+          <td style="font-size:60%">{{sim}}</td>
+        </tr>      
+      </table>
+   </div>-->
+
+
+
+<!--<div style="width:50%">
+<div class='div-with-hole'></div>
+</div>-->
+<!--<div style="border:1px solid lightgray;width:40%;background: white" class="text-center">
+  <div style="background: gray; width:100%;">
+    <table border="1" class="tableMiddle">
+      <tr style="font-size:0.9vw;color:white">
+        <td style="width:8%">&nbsp;</td>
+        <td style="width:15%;">Day</td>
+        <td style="width:15%;">Internet(GB)</td>
+        <td style="width:15%;">Call&Text</td>
+        <td style="width:18%;">Price(THB)</td>
+        <td>&nbsp;</td>
+      </tr>
+
+    </table>
+  </div>
+
+  <div style="width:100%;font-size:1vw">
+    <app-item-package-small-module></app-item-package-small-module>
+    
+     <div style="padding:0 1% 0 1%">
+      <div class="lineBorder"></div>
+     </div>
+   
+    <app-item-package-small-module></app-item-package-small-module>
+  </div>
+</div>-->
+
+<!--<input type="checkbox" id="c1" name="cc" />
+    <label for="c1"><span></span>Check Box 1</label>
+    <p>
+    <input type="checkbox" id="c2" name="cc" />
+    <label for="c2"><span></span>Check Box 2</label>
+    <p><br/>
+    <input type="radio" id="r1" name="rr" />
+    <label for="r1"><span></span>Radio Button 1</label>
+    <p>
+    <input type="radio" id="r2" name="rr" />
+    <label for="r2"><span></span>Radio Button 2</label>-->
+ 
+  <!--<div class="custom-radios">
+  <div>
+    <input type="radio" id="color-1" name="color" value="color-1" checked>
+    <label for="color-1">
+      <span>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
+      </span>
+    </label>
+  </div>
+  
+  <div>
+    <input type="radio" id="color-2" name="color" value="color-2">
+    <label for="color-2">
+      <span>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
+      </span>
+    </label>
+  </div>
+  
+  <div>
+    <input type="radio" id="color-3" name="color" value="color-3">
+    <label for="color-3">
+      <span>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
+      </span>
+    </label>
+  </div>
+
+  <div>
+    <input type="radio" id="color-4" name="color" value="color-4">
+    <label for="color-4">
+      <span>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
+      </span>
+    </label>
+  </div>
+</div>
+  
+  -->
+<!--
+  <h1>Custom Checkboxes</h1>
+<label class="container">One
+  <input type="checkbox" checked="checked">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Two
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Three
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Four
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>-->
+
+<!--<div style="width:50%;height:50px;border:2px solid red">
+  <input type="radio" id="shipadd1" value=1 name="address" />
+  <label for="shipadd1"></label>
+  value 1
+</div>
+
+<div style="width:50%;height:50px;border:2px solid red">
+  <input type="radio" id="shipadd2" value=2 name="address" />
+  <label for="shipadd2"></label>
+  value 2
+</div>-->
+    
+    <table>
+    <tr>
+        <td>
+            <div>
+                abcde abcde abcde abcde abcde abcde              
+            </div>
+        </td>
+        <td>
+            <div>
+                xxx
+            </div>
+        </td>
+    </tr>
+</table>

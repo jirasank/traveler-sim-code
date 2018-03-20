@@ -1,0 +1,15 @@
+{
+	"resultCode": "20000",
+	"developerMessage": "Success",
+	"data": {
+		"D_GetPPSimSt2Response": {
+            "outbuf": {
+				"PP_SIM_SERIAL_NO_VC": "2222222222222",
+				"PP_BOOK_MOBILE_NO": "0878303382",
+				"PP_IMSI": "520032000001123",
+				"PP_SIM_TYPE": "OTC",
+				"PP_TUX_CODE": "0"
+			}
+		}
+	}
+}

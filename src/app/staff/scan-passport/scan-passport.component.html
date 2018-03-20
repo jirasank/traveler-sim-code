@@ -1,0 +1,393 @@
+<!--<div class="content  ">  
+   <div class="divItem" >
+    <div class="content-title">
+      Please insert ID card to reader then input mobile number.
+    </div>
+   </div>
+  <div style="height:70%;float:left;width:47%;padding-top:2vh;margin-right:2%">
+     <app-idcard ></app-idcard>     
+  </div>
+  
+  <div style="height:88%;float:left;width:47%;padding-top:2vh;">
+    <div class="boxcon-right">
+          <div class="caption-box" >            
+             <div class="content-title">Package<span style="float:right;">Mobile No.</span>               
+             </div>                   
+          </div>     
+          <div style="overflow-y:auto;height:67%;" >
+            <div class="items" >
+             
+              <div *ngFor="let select of packageSelect.globalPackageSelect;let i=index" >
+                <div >
+                  <div class="item" appSetAttribute [dirBackgroundColorAlpha]="select.color">
+                    <span class="badge" appSetAttribute [dirBackgroundColor]="select.color">{{select.id}}</span>
+                    <span class="title-speed" >{{select.day}}&nbsp;&nbsp;{{select.speed}}&nbsp;&nbsp;฿{{select.price}}</span>    
+                  </div>
+                  <span style="float:right;"> <input type="text" placeholder="Enter Mobile NO." maxlength=10  /></span>                    
+                </div>
+                <div style="font-size:2.5vh">
+                 {{select.des}}
+                </div>
+              </div>             
+            </div>            
+          </div>
+          <div class="divCenter">
+            <div style="height:17vh;float:left;width:40%;">
+            <app-total-package [totalPackage]="packageSelect.globalTotal"></app-total-package>
+           </div>
+           <div class="boxcon divButton" style="height:17vh;width:40%">
+              <button class="button" (click)="onClick()" routerLink="/staff/finish">OK</button>
+            </div>
+          </div>
+    </div>
+  </div>
+  
+</div>
+<router-outlet></router-outlet>-->
+
+<!--<p>work</p>-->
+<!--<router-outlet name="cashier-show-package"></router-outlet>-->
+<!--<div class= "divTable">
+    <div class ="divLeft">
+       <staff-header-package></staff-header-package>      
+    </div>
+    <div style="margin-left:45%;">     
+        <staff-header-package></staff-header-package>  
+    </div>
+</div>-->
+
+
+
+<!--<div class="content  boxleft "> 
+   <staff-header-package></staff-header-package>
+   <router-outlet ></router-outlet>
+   
+</div>-->
+
+<!--<div class="main" > 
+  <div class="div-content">
+  <div class="divItem" style="overflow:auto;"> 
+    <table style="border-spacing: 2vw 0.7vh;" >   
+      <tr>
+        <td class="font-title" colspan="3">AIS' Traveller SIM </td>
+      </tr>  
+      <tr *ngFor="let package of Package; let i = index">
+        <div  *ngIf="i % 3 === 0">
+           <td > <app-item-package [packages]="Package[i]" (packageItem)="result($event)"></app-item-package></td>
+           <td  *ngIf="Package[i + 1]"><app-item-package [packages]="Package[i+1]" (packageItem)="result($event)"></app-item-package>
+           <td  *ngIf="Package[i + 2]"><app-item-package [packages]="Package[i+2]" (packageItem)="result($event)"></app-item-package>        
+        </div>
+      </tr>
+    </table>
+  </div>
+  </div>
+</div>-->
+
+<!--<div class= "divTable">
+    <div class ="divLeft">
+       123
+    </div>
+    <div style="margin-left:45%;">       
+    </div>
+</div>-->
+
+
+<!--<div style="height:43%;float:left;width:20%;margin-bottom: 0.5%">
+   <app-selected-item [packageSelectItem]="packageSelect.globalPackageSelect" (indexPackageItem)="removeSelectIndex($event)"></app-selected-item>
+</div>-->
+
+<!--<div style="height:20%;float:left;width:10%;margin-bottom: 0.5%">
+  <app-total-package [totalPackage]="packageSelect.globalTotal"></app-total-package>
+</div>
+<div class=" boxcon divButton" style="height:20%">
+  <button class="button" routerLink="/staff/passport">Confirm</button>
+</div>-->
+<!--<router-outlet ></router-outlet>-->
+
+<!--<table class="table">
+  <tr>
+    <td class="td">
+      <div class="main">
+        <div class="div-content middle">
+        
+            <table style="height:50%;width:80%;border-spacing:1vw 0;margin-top: -15%" >             
+               <tr>
+                <td class="textRight">
+                    <img class="image" src="assets/images/your_passport.png" />
+                </td>
+                <td class="textLeft font_bold">Your passport</td>
+              </tr>
+              <tr>
+                <td class="textRight">
+                  <img class="image" src="assets/images/your_cash.png" />
+                </td>
+                <td class="textLeft font_bold">Cash THB</td>
+              </tr>
+              
+            </table>
+            <img class="logo" src="assets/images/ais.png" />
+            <div class="callcenter middle"></div>
+            <div class="div_bottom">{{callCenterMsg}} </div>
+            <div *ngIf="chkbox" class="cashOnly">CASH ONLY</div>
+        </div>
+      </div>
+    </td>
+    <td rowspan="2"  class="textCenter borderTop" >    
+         <table border="0" style="width:100%;height:100%;padding:1% 5% 2% 5%">
+            <tr>
+              <td colspan="3" class="font-customer textLeft" style=" vertical-align: baseline;">
+               Costomer' ID from
+              </td>  
+               <td rowspan="2" style="width:25%">
+                <img #imageTypeID class="image" src="assets/images/passport.png" />
+              </td>            
+            </tr>
+            <tr>
+              <td style="width:20%" >
+                &nbsp;
+              </td>
+              <td colspan="2" class="textLeft font-customer" >
+               <input type="radio" #passport  name ="radio" (change)="onSelectionChange(passport.value)"  checked value="passport"> PASSPORT<br>
+               <input type="radio" #idCard name ="radio" value="idCard" (change)="onSelectionChange(idCard.value)">Thai Id Card<br>
+              </td>           
+            </tr>
+            <tr>
+              <td colspan="3" >
+                   <div *ngIf="typeValue=='passport'" >
+                  <app-read-passport #viewPassport (profileJson)="result($event)"></app-read-passport>  
+                   </div> 
+                    <div *ngIf="typeValue=='idCard'">
+                  <app-idcard #viewIdCard (profileJson)="result($event)"></app-idcard>  
+                   </div>     
+              </td>
+              <td  >                 
+                  <button style="background-color: #74a222;margin-bottom: 5px;" (click)="onResumeScan()"  class="buttonScan ">Scan</button>
+                  <button style="background-color: #f0741f" class="buttonScan " (click)="onClear()">Clear</button>
+              </td>              
+            </tr>
+            <tr>
+              <td colspan="4" style="background: #ffd966;padding:2%">
+                <table border="0" style="width:100%;">
+                  <tr>
+                    <td class="textLeft font-passport-id" style="width:20%">ID:</td>
+                    <td class="textLeft font-detail">{{id}}</td>
+                  </tr>
+                  <tr>
+                    <td class="textLeft font-passport-id" >First Name:</td>
+                    <td class="textLeft font-detail">{{firstName}}</td>
+                  </tr>
+                  <tr>
+                    <td class="textLeft font-passport-id" >Last Name:</td>
+                    <td class="textLeft font-detail">{{lastName}}</td>
+                  </tr>
+                  <tr>
+                    <td class="textLeft font-passport-id" >Nationality: </td>
+                    <td class="textLeft font-detail">{{nationality}}</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="tdScript">
+      <div class="divScript" style="padding-top:5px">
+        Scripts
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="divScript">
+        <div class="divScriptText">
+          Product "Hot Price" Package<br>- เน้นขายกลุ่มนักท่องเที่ยวที่เน้น Internet
+        </div>
+      </div>
+    </td>
+    <td class="tdTotal  " style="text-align: right">
+      <div class="middleVerticalRight" style="padding-top:4px;padding-right:5%">
+        <div class="middle totalText">Total</div>    
+        <div class="middle divImage_bottom" style="width:15%;height:7vh;font-size: 3vh " >+12</div>      
+        <div class="middle total  ">{{1598 | number:'1.0'}}THB</div>
+     </div>
+    
+    <div class="container font" style="padding:2% 20px 1% 0">
+      <div class="left" >
+      <button class="button middle"  style="background-color: #a7a7a7" routerLink="/staff/passport">Back</button>
+      </div>
+      <div class="right" >
+      <button class="button middle"  style="background-color: #548235" routerLink="/staff/passport">PAY</button>
+      </div>
+    </div>
+
+    </td>
+  </tr>
+</table>-->
+
+<div style="padding: 0 1% 0 1%;position: relative;">
+  <div class="containerMain  ">
+    <div class="leftMain">
+
+
+      <table border="0" style="width:100%;border-spacing: 0 0 ;border-collapse: collapse;  ">
+        <!--<tr>
+          <td>
+            <staff-header-package (chkbox)="setChkboxCash($event)"></staff-header-package>
+          </td>
+        </tr>-->
+        <div style="width:100%;height:80vh;background-color: #e6e6e6;margin-left:-0.02em;">
+          <div style="width:100%;padding:0 1% 1.5% 1.5%; ;border-radius: 0 0 0 20px;background-color: white;">
+            <div class="divMain">
+
+              <div style="width:100%;height:100%;border:1px solid lightgray;padding:10%;position: relative" class="middle">
+                <img class="imageCash" src='assets/images/passport-show.png'>
+
+                <img class="logo" id="logo" src="assets/images/ais.png" />
+                <div class="callcenter "></div>
+                <div class="div_bottom  "></div>
+                <div class="div_told middle">{{callCenterMsg}} </div>
+                <div *ngIf="packageSelect.globalCash" class="cashOnly">CASH ONLY</div>
+              </div>
+
+
+            </div>
+          </div>
+          <!--white image-->
+          <div style="background: white;">
+            <div style="border-radius:0 15px 0 0;background: #e6e6e6; " class="shadow">
+              <div style="padding:2% 1.5% 0 0;border-radius:0 15px 0 0;background: #e6e6e6; " class="boxShadow ">
+                <div class="divScript">
+                  <table style="height:100%">
+                    <tr>
+                      <td style="width:20%;color:#8cc540" class="text-center">Scripts</td>
+                      <td style="color:#ff9a50" class="text-left"> Product "Hot Price" Package
+                        <br>เน้นขายกลุ่มนักท่องเที่ยวที่เน้น Internet
+                      </td>
+                    </tr>
+                  </table>
+                  <!--<div style="width:100%;background: #e6e6e6; " class="shadowRight"></div>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </table>
+
+    </div>
+    <div class="rightMain">
+      <div style="width:100%;height:100%;background-color: #e6e6e6;">
+        <div class="divHeightRight shadowBottomRight " style="position: relative">
+
+          <div style="width:100%;padding: 0 3% 0 3%;" class="middle">
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;height:100%;border-collapse: collapse;">
+              <tr>
+                <td colspan="2" class="font-customer text-center" style="padding:0; vertical-align: baseline;">
+                  Customer' ID from
+                </td>
+              </tr>
+              <tr>
+                <td class="font-customer text-right" style="padding:0;color:gray;width:30%">
+                  <div *ngIf="typeValue =='passport'" style="width:100%;height:100%;" class="middle">
+                    <input #passport type="radio" id="passport" checked value="passport" name="idpass" (change)="onSelectionChange(passport.value)"
+                    />
+                    <label for="passport"></label>PASSPORT
+                  </div>
+                  <div *ngIf="typeValue =='idCard'" style="width:100%;height:100%;" class="middle">
+                    <input #passport type="radio" id="passport" value="passport" name="idpass" (change)="onSelectionChange(passport.value)" />
+                    <label for="passport"></label>PASSPORT
+                  </div>
+
+                </td>
+                <td class="font-customer text-left" style="padding:0;color:gray;">
+                  <div *ngIf="typeValue =='idCard'" style="width:100%;height:100%;" class="middle">
+                    <input #idCard type="radio" id="idcard" checked value="idCard" name="idpass" (change)="onSelectionChange(idCard.value)" />
+                    <label for="idcard"></label>Thai ID Card
+                  </div>
+                  <div *ngIf="typeValue =='passport'" style="width:100%;height:100%;" class="middle">
+                    <input #idCard type="radio" id="idcard" value="idCard" name="idpass" (change)="onSelectionChange(idCard.value)" />
+                    <label for="idcard"></label>Thai ID Card
+                  </div>
+                </td>
+
+              </tr>
+              <tr >
+                <td colspan="2" style="padding:0;">                 
+                  <div *ngIf="typeValue=='passport'">
+                    <app-read-passport #viewPassport (profileJson)="result($event)"></app-read-passport>
+                  </div>
+                  <div *ngIf="typeValue=='idCard'">
+                    <app-idcard #viewIdCard (profileJson)="result($event)"></app-idcard>
+                  </div>
+                </td>
+
+              </tr>
+              <tr >
+                <td class="text-left font-passport-id">ID:</td>
+                <td class="textLeft font-detail">{{id}}</td>
+              </tr>
+              <tr>
+                <td class="textLeft font-passport-id">First Name:</td>
+                <td class="textLeft font-detail">{{firstName}}</td>
+              </tr>
+              <tr>
+                <td class="textLeft font-passport-id">Last Name:</td>
+                <td class="textLeft font-detail">{{lastName}}</td>
+              </tr>
+              <tr style="border-bottom: 1px solid lightgray">
+                <td class="textLeft font-passport-id">Nationality: </td>
+                <td class="textLeft font-detail">{{nationality}}</td>
+              </tr>
+            </table>
+
+          </div>
+          <!--<div style="padding:0 4% 4% 0">
+            <div class="lineBorder"></div>
+          </div>-->
+
+          <div class="row success-footer">
+            <div class="small-6 large-6 columns text-center">
+              <button type="button" class="mc-button mc-button--green" style="width:80%;height:2.5em" (click)="onResumeScan()">SCAN</button>
+            </div>
+            <div class="small-6 large-6 columns text-center">
+              <button type="button" class="mc-button mc-button--darkgreen" style="width:80%;height:2.5em" (click)="onClear()">CLEAR</button>
+            </div>
+          </div>
+
+          <div style="padding:2% 4% 2% 4%">
+            <div class="containerTab" style="color : gray;border-left:1px solid lightgray;border-top:1px solid lightgray">
+              <div class="left">
+                <div class="middle" style="padding-left:6%;">SIM</div>
+              </div>
+              <div class="right">
+                <div class="middle" style="color:#8cc540; padding-right:15px;font-weight: bold">+{{packageSelect.globalTotal}}</div>
+                <div class="middle" style="background: #8cc540;padding:0.4vw;width:5vw"> <img style="height:2vw;width:2vw" src='assets/images/sim-white.png'></div>
+              </div>
+            </div>
+            <div class="horizontal_dotted_line" style="border-color:lightgray"></div>
+            <div class="containerTab" style="color : gray;border-left: 1px solid lightgray;border-bottom: 1px solid lightgray">
+              <div class="left">
+                <div class="middle" style="padding-left:6%;">Total</div>
+              </div>
+              <div class="right">
+                <div class="middle" style="color:#8cc540; padding-right:15px;font-weight:bold">{{packageSelect.globalAmount | number:'1.0'}}</div>
+                <div class="middle" style="background: #8cc540;color:white;width:5vw;padding:0.4vw">THB</div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="small-6 large-6 columns text-center">
+              <button type="button" class="mc-button mc-button--gray" style="width:80%;height:2.5em" (click)="onBack()">BACK</button>
+            </div>
+            <div class="small-6 large-6 columns text-center">
+              <button type="button" class="mc-button mc-button--darkgreen" style="width:80%;height:2.5em" (click)="onScanSim()">SCAN SIM</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

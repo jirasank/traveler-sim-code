@@ -1,0 +1,94 @@
+@import "../../../assets/scss/util/color";
+.font-title {   
+    font-size: 2vw;
+    font-family:  serif;
+    font-weight: bold;
+    color: $mc-brown;   
+}
+
+.main {
+     height: 100%;
+     width: 100%;    
+    -khtml-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;   
+     background: url("../../../assets/images/sky.png") no-repeat center center;
+     background-size: cover;
+    //  @media screen and (max-height: 500px){      
+    //  height: 350px;  
+    //  }    
+    //   @media screen and (max-width: 600px){      
+    //    width: 400px;  
+    //  }    
+     
+}
+
+.div-content{     
+   height:100%;
+   width:100%;
+   position: relative;
+  
+}
+.divItem{   
+    height: 76vh;
+    width: 75%;
+    //border:2px solid #ffc000;
+    border-radius: 2em;   
+    overflow-y: auto;
+    margin-top: -10%;
+   // padding:2%;
+}
+
+.logo {
+    position: absolute;  
+    right: 1%;     
+    top: 10%;
+    width: 15%;
+    height: 5%;
+}
+.callcenter{
+   position: absolute;
+   left: 6%;
+   bottom: 5%; 
+   background-image: url("../../../assets/images/ais_jaide.png");
+   background-repeat: no-repeat;
+   background-size: contain;
+   width: 90%;
+   height: 15%;
+   display:block; 
+}
+.div_told {
+      background: url("../../../assets/images/told.png") no-repeat center center ;     
+        background-size: contain;
+    // background-image: url("../../../assets/images/told.png") center center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+      width:35%;
+      height: 20%;      
+      position: absolute;
+      bottom: 1%;
+      left: 15%;  
+    //  color:black;
+      font-size: 2vw;
+    
+    
+}
+.cashOnly{
+   border: 2px solid $red1-color;
+   height: 3.5%;
+   position: absolute;
+   right: 2%;
+   bottom: 5%; 
+   font-weight: bold;
+   color:$red1-color;
+   padding: 1% 1.5%;
+   font-size: 80%;
+   border-radius: 0.5em;
+}
+.image {
+    height: 22vh;
+    width: 17vw;
+}

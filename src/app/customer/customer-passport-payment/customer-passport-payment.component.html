@@ -1,0 +1,48 @@
+<div class="main">
+  <div class="div-content">
+    <div class="divItem middle " style="overflow:auto;padding:3%;">
+      <table cellpadding="0" cellspacing="0" border="0" style="height:70%;width:100%;border-spacing: 0 0;">
+        <tr>
+          <td  >
+          <div style="width:100%;height:100%;" class="middle">
+            <div style="width:70%;height:80%;;position:relative" class="middle">
+              <img  [ngStyle]="{'width': showPackage ? '100%' : '50%'}"  src='assets/images/your-cash-thb.png'>
+              <div style="position:absolute;top:20%;font-size:2vw">Cash <span style="color:#ed405b">&nbsp;{{packageSelect.globalAmount | number:'1.0'}}</span>&nbsp;THB.</div>
+            </div>
+          </div>           
+          </td>                
+          <td *ngIf="showPackage"  style="width:50%">
+            <div style="width:100%;height:50%;">
+
+              <div style="width:100%;height:70vh;overflow-y: auto;overflow-x: hidden" [ngClass]="{'middle': Package.length < 3,'middleHorizontal': Package.length > 2}">
+                <table border="0" style="width:80%;">
+                  <tr *ngFor="let package of Package; let i = index">
+                    <div *ngIf="i % 2 === 0">
+                      <td style="width:30%">
+                        <app-item-package [packages]="Package[i]" (packageItem)="result($event)"></app-item-package>
+                      </td>
+                      <td style="width:30%" *ngIf="Package[i + 1]">
+                        <app-item-package [packages]="Package[i+1]" (packageItem)="result($event)"></app-item-package>
+                      </td>
+                      <td style="width:30%" *ngIf="!Package[i + 1]">
+                        &nbsp;
+                      </td>
+
+                    </div>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </td>        
+        </tr>
+      </table>
+      <img class="logo" src="assets/images/ais.png" />
+     <div  class="callcenter"></div>
+     <div  class="div_told middle">{{callCenterMsg}} </div>
+     <div *ngIf="packageSelect.globalCash" class="cashOnly middle">CASH ONLY</div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,48 @@
+<div class="main ">
+  <div class="div-content middle ">
+    <!--<p style="padding-left:20%" class="font-title">Cash
+      <font color="red">1,147</font> THB,
+      <font color="#548235"> 3 SIMS</font> are done</p>-->
+
+    <div class="divItem middleHorizontal">
+      <table border="0" style="width:90%;">
+        <tr>
+          <td colspan="4" style="font-size:1.5em;" class="color-font-brown">Cash <span style="color:#ed405b">&nbsp;{{packageSelect.globalAmount | number:'1.0'}}</span><span>&nbsp; THB ,{{packageSelect.globalTotal}} {{callCenterMsg}}</span></td>
+        </tr>
+        <tr *ngFor="let package of Package; let i = index">
+          <div *ngIf="i % 2 === 0" class="middle">
+            <td style="width:30%;font-size:1vw">
+              <app-item-package [packages]="Package[i]" (packageItem)="result($event)"></app-item-package>
+            </td>
+            <td style="width:20%;font-size:0.8vw">
+              <app-item-sim [simProgress]="Package[i].sim"></app-item-sim>
+            </td>
+            <!--<td style="width:10%">&nbsp;</td>-->
+            <td style="width:30%;font-size:1vw" *ngIf="Package[i + 1]">
+              <app-item-package [packages]="Package[i+1]" (packageItem)="result($event)"></app-item-package>
+            </td>
+            <td style="width:20%;font-size:0.8vw" *ngIf="Package[i + 1]">
+              <app-item-sim [simProgress]="Package[i+1].sim"></app-item-sim>
+            </td>
+
+            <td style="width:30%;font-size:1vw" *ngIf="!Package[i + 1]">
+              <app-item-package style="visibility: hidden" [packages]="PackageHide" [selectClick]="false" (packageItem)="result($event)"></app-item-package>
+            </td>
+             <td style="width:20%;font-size:0.8vw" *ngIf="!Package[i + 1]">
+              <app-item-sim style="visibility: hidden" [simProgress]="PackageHide.sim"></app-item-sim>
+            </td>
+           
+          </div>
+        </tr>
+
+      </table>
+
+    </div>
+
+    <!--<img class="logo" src="assets/images/ais.png" />-->
+    <div class="callcenter"></div>
+    <div class="div_told middle">{{callCenterMsg}} </div>
+   <div *ngIf="packageSelect.globalCash" class="cashOnly middle">CASH ONLY</div>
+  </div>
+
+</div>

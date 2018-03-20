@@ -1,0 +1,237 @@
+<!--<table class="table">
+  <tr>
+    <td class="td">
+      <div class="main">
+        <div class="div-content middle">
+
+          <table style="height:50%;width:80%;border-spacing:1vw 0;margin-top: -15%">
+            <tr>
+              <td class="textRight">
+                <img class="image" src="assets/images/your_passport.png" />
+              </td>
+              <td class="textLeft font_bold">Your passport</td>
+            </tr>
+            <tr>
+              <td class="textRight">
+                <img class="image" src="assets/images/your_cash.png" />
+              </td>
+              <td class="textLeft font_bold">Cash THB</td>
+            </tr>
+
+          </table>
+          <img class="logo" src="assets/images/ais.png" />
+          <div class="callcenter middle"></div>
+          <div class="div_bottom">{{callCenterMsg}} </div>
+          <div *ngIf="chkbox" class="cashOnly">CASH ONLY</div>
+
+
+
+        </div>
+
+      </div>
+
+
+    </td>
+    <td rowspan="2" class="textCenter borderTop">
+      <div class="divItemPackage" style="overflow-y:auto;">
+        <div *ngFor="let package_item of Package; let i = index">
+          <app-item-package-small-module  [packages]="Package[i]" [showHead]=false></app-item-package-small-module>
+          
+          <div style="width:80%;padding-left:15%">
+            <table class="font_normal">             
+                <tr > 
+                 <td >
+                  <div class="imageSim"></div>
+                </td>
+                <td style="font-size:70%">
+                  <input style="border:2px solid gray;background-color: #ffd966"  value="SIM Serial #1"><br>
+                </td>
+              </tr>
+
+              <tr >
+                 <td >
+                  <div class="imageSim"></div>
+                </td>
+                <td style="font-size:70%">
+                  <input style="border:2px solid gray;background-color: #ffd966"  value="SIM Serial #2"><br>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="tdScript">
+      <div class="divScript" style="padding-top:5px">
+        Scripts
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="divScript">
+        <div class="divScriptText">
+          Product "Hot Price" Package<br>- เน้นขายกลุ่มนักท่องเที่ยวที่เน้น Internet
+        </div>
+      </div>
+    </td>
+    <td class="tdTotal  " style="text-align: right">
+      <div class="middleVerticalRight" style="padding-top:4px;padding-right:5%">
+        <div class="middle totalText">Total</div>
+        <div class="middle divImage_bottom" style="width:15%;height:7vh;font-size: 3vh ">+12</div>
+        <div class="middle total  ">{{1598 | number:'1.0'}}THB</div>
+      </div>
+    
+      <div class="container font" style="padding:2% 20px 1% 0">
+        <div class="left">
+          <button class="button middle" style="background-color: #a7a7a7" routerLink="/staff/passport">Back</button>
+        </div>
+        <div class="right">
+          <button class="button middle" style="background-color: #548235" routerLink="/staff/passport">PAY</button>
+        </div>
+      </div>
+
+    </td>
+  </tr>
+</table>-->
+
+<div style="padding: 0 1% 0 1%;position: relative;">
+  <div class="containerMain  ">
+    <div class="leftMain">
+
+
+      <table border="0" style="width:100%;border-spacing: 0 0 ;border-collapse: collapse;  ">
+        <!--<tr>
+          <td>
+            <staff-header-package (chkbox)="setChkboxCash($event)"></staff-header-package>
+          </td>
+        </tr>-->
+        <div style="width:100%;height:70vh;background-color: #e6e6e6;margin-left:-0.02em;">
+         <div style="width:100%;padding:0 1% 1.5% 1.5%; ;border-radius: 0 0 0 20px;background-color: white;">
+          <div class="divMain">
+
+            <div style="width:100%;height:100%;border:1px solid lightgray;padding:10%;position: relative" class="middle">
+              <img class="imageCash" src='assets/images/your-cash-thb.png'>
+
+              <img class="logo" id="logo" src="assets/images/ais.png" />
+              <div class="middle" style="width:100%;position:absolute;top:35%;left:0">Chash<span style="color:#ed405b">&nbsp;{{packageSelect.globalAmount | number:'1.0'}}</span><span>&nbsp;THB.</span></div>
+              <div class="callcenter "></div>
+              <div class="div_bottom  "></div>
+              <div class="div_told middle">{{callCenterMsg}} </div>
+              <div *ngIf="packageSelect.globalCash" class="cashOnly">CASH ONLY</div>
+            </div>
+
+
+
+
+
+          </div>
+         </div>
+          <!--white image-->
+          <div style="background: white;">
+            <div style="border-radius:0 15px 0 0;background: #e6e6e6; " class="shadow">
+              <div style="padding:2% 1.5% 0 0;border-radius:0 15px 0 0;background: #e6e6e6; " class="boxShadow ">
+                <div class="divScript">
+                  <table style="height:100%">
+                    <tr>
+                      <td style="width:20%;color:#8cc540" class="text-center">Scripts</td>
+                      <td style="color:#ff9a50" class="text-left"> Product "Hot Price" Package
+                        <br>เน้นขายกลุ่มนักท่องเที่ยวที่เน้น Internet
+                      </td>
+                    </tr>
+                  </table>
+                  <!--<div style="width:100%;background: #e6e6e6; " class="shadowRight"></div>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </table>
+
+    </div>
+    <div class="rightMain">
+      <div style="width:100%;height:100%;background-color: #e6e6e6;">
+        <div class="divHeightRight shadowBottomRight " style="position:relative;">
+
+          <!--<div style="width:100%;padding: 0 3% 0 3%;" class="middle">           
+          </div>-->
+          <div style="padding-bottom:2%;width:100%" class="text-center">
+            Prepare SIMs
+          </div>
+          <div style="width:100%; padding: 0 3% 0 3%;">
+            <div class="overFlowSim text-center">
+
+              <div style="width:100%;font-size:1vw;">
+
+                <div *ngFor="let package_item of Package; let i = index;">
+                  <div *ngIf="package_item.count !==0">
+                  <app-item-package-small-module (packageItem)="onSelectPackage($event)" [selectClick]="false" [packages]="package_item" [showAddSub]="true"></app-item-package-small-module>
+                  <div style="width:45%;">
+                    <table border="0" cellpadding="0" cellspacing="0" class="font_normal">
+                      <tr *ngFor="let sim of package_item.sim; let j = index;">
+                        <td>
+                          <div class="imageSim"></div>
+                        </td>
+                        <td style="font-size:60%" class="text-left">
+                          <div *ngIf="sim.simNumber"><input style="border:1px solid lightgray;color:gray" readonly value="{{sim.simNumber|slice:8:12}}-{{sim.simNumber|slice:-1}}"></div>
+                          <div *ngIf="!sim.simNumber "><input id="simId{{sim.simNo}}" autofocus type="text" (keypress)="_keyPress($event,i,j,sim.simNo,$event.target.value)"
+                              style="border:1px solid lightgray;color:gray" placeholder="SIM Serial #{{sim.simNo}}" class="input"> </div>
+
+                        </td>
+                      </tr>
+
+                    </table>
+                  </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+
+          <div style="position:absolute;bottom:1%;width:100%">
+            <div style="padding:4%">
+              <div class="containerTab" style="color : gray;border-left:1px solid lightgray;border-top:1px solid lightgray">
+                <div class="left">
+                  <div class="middle" style="padding-left:6%;">SIM</div>
+                </div>
+                <div class="right">
+                  <div class="middle" style="color:#8cc540; padding-right:15px;font-weight: bold">+{{packageSelect.globalTotal}}</div>
+                  <div class="middle" style="background: #8cc540;padding:1vw;width:5vw"> <img style="height:2vw;width:2vw" src='assets/images/sim-white.png'></div>
+                </div>
+              </div>
+              <div class="horizontal_dotted_line" style="border-color:lightgray"></div>
+              <div class="containerTab" style="color : gray;border-left: 1px solid lightgray;border-bottom: 1px solid lightgray">
+                <div class="left">
+                  <div class="middle" style="padding-left:6%;">Total</div>
+                </div>
+                <div class="right">
+                  <div class="middle" style="color:#8cc540; padding-right:15px;font-weight:bold">{{packageSelect.globalAmount | number:'1.0'}}</div>
+                  <div class="middle" style="background: #8cc540;color:white;width:5vw;padding:1vw">THB</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row success-footer">
+              <div class="small-6 large-6 columns text-center">
+                <button type="button" class="mc-button mc-button--gray" style="width:80%;height:2.5em" (click)="onBack()">BACK</button>
+              </div>
+              <div *ngIf="!packageSelect.globalStatusSimDone" class="small-6 large-6 columns text-center">
+                <button type="button" class="mc-button mc-button--green" style="width:80%;height:2.5em" >PAY</button>
+              </div>
+              <div *ngIf="packageSelect.globalStatusSimDone == 'done'" class="small-6 large-6 columns text-center">
+                <button type="button" class="mc-button mc-button--darkgreen" style="width:80%;height:2.5em" (click)="onGoCalc()">PAY</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-html {
+/*html {
     height: 100%;
     background: linear-gradient(to bottom, #f8ffe8 0%,#e3f5ab 31%,#b7df2d 100%);
 }
@@ -35,4 +35,109 @@ html {
     font-size: 22px;
     padding-top: 12px;
     text-align: center;
+}*/
+/*html, body {
+    height: 100%;
+     width: 100%;
+    margin:0; 
+    padding:0;
+    overflow: auto;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 100%;
 }
+.middle{
+    align-content: center;
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+    display: flex;
+}
+.middleHorizontal{
+    align-content: center;
+    justify-content: center;
+  
+    text-align: center;
+    display: flex;
+}
+.middleVertical{
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+.middleVerticalRight{
+    justify-content: flex-end ;
+    align-content: center;
+    align-items: center;
+    text-align: flex-end;
+    display: flex;
+}
+.middleVerticalLeft{
+    justify-content: flex-start ;
+    align-content: center;
+    align-items: center;
+    text-align: flex-start;
+    display: flex;
+}
+.middleBottom{
+   justify-content: bottom ;
+    align-content: center;
+    align-items: center;
+    text-align: bottom;
+    display: flex;
+}
+.textCenter{
+     text-align: center;
+}
+.textRight{
+     text-align: right;
+}
+.textLeft{
+     text-align: left;
+}
+.color-font-green {
+    color: #8dc63f;
+}
+.color-font-brown {
+    color: #552906;
+}
+.color-back-brown {
+    background-color: #552906;
+}
+.color-font-red{
+    color: red;
+}
+.color-font-white{
+    color: white;
+}
+.notSelectText{
+     -khtml-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+.font_normal{ 
+  font-size: 3vh;
+  color:black;
+}
+.font_bold{ 
+  font-weight: bold;
+}
+.borderTop{
+   border-top: 4px solid #352409;
+}
+.borderBottom{
+   border-bottom: 4px solid #352409;
+}
+.borderLeftBottom{
+   border-left: 4px  solid #352409;
+   border-bottom: 4px  solid #352409;
+}
+.border{
+   border: 4px solid #352409;
+}
+.borderLeft{
+   border-left: 4px solid #352409;
+}*/

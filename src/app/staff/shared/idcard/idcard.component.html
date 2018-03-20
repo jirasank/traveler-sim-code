@@ -1,0 +1,36 @@
+<!--<div class="content boxcon"  >  
+  <div  class="card-holder">
+    <img *ngIf="status" src={{imageCard}}>  
+     <img  *ngIf="!status" src="assets/images/error-card.png">   
+    
+  </div>
+  <div [hidden]="!showStatusBar" id="status-bar" class="show_progress" >
+    <div style="width: 100%; ">
+      <div class="status-message">
+          Loading card data ...          
+      </div>
+    </div> 
+    <div style="width: 20vw; " >
+        <div class="progress">
+          <span [style.width]="progressValue"></span>
+        </div>
+    </div>    
+  </div>
+</div>-->
+<!--<button (click) = "test()">test</button>-->
+<div style="position: relative;">
+  <img #imageIdCard class="my-idcard" src="assets/images/id-blank.png">
+  <div [hidden]="!showStatusBar" id="status-bar" class="show_progress">
+    <div style="width: 100%; ">
+      <div class="status-message ">
+        <label #labelStatus></label>
+        <!--Loading card data ...-->
+      </div>
+    </div>
+    <div [hidden]="!showProgress" style="width: 20vw; ">
+      <div class="progress">
+        <span [style.width]="progressValue"></span>
+      </div>
+    </div>
+  </div>
+</div>

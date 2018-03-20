@@ -1,0 +1,51 @@
+{
+	"resultCode": "20000",
+	"developerMessage": "Success",
+	"data": {
+		"A_GetPPReceiptResponse": {
+			"outbuf": {
+				"PP_RECEIPT_LOCATION": "1004",
+				"PP_RECEIPT_TYPE": "W-CO",
+				"PP_RECEIPT_DATE": "2017-10-17",
+				"PP_RECEIPT_NO": "473.0",
+				"PP_BATCH_NO": "0000100417",
+				"PP_SERIAL_NO": "1017165326",
+				"PP_ACCOUNT_NO": "3.168517001E9",
+				"PP_ACCOUNT_NO_VC": "3168517001",
+				"PP_ADDR1": [
+					"บริษัท แอดวานซ์ ไวร์เลส เน็ทเวอร์ค จำกัด",
+					"408/60 อาคาร พหลโยธินเพลส ชั้น 15 ถนนพหลโยธิน แขวงสามเสนใน เขตพญาไท กรุงเทพมหานคร 10400 โทร.1175",
+					"ทะเบียนเลขที่ 0105548115897",
+					"",
+					"http://www.ais.co.th"
+				],
+				"PP_FACE_VALUE_VC": "(หนึ่งพันบาทถ้วน)",
+				"PP_STATUS": "N",
+				"PP_CUST_GROUP_NAME": "Advanced Wireless Network Co.,Ltd",
+				"PP_MOBILE_NO": "0937019012",
+				"PP_REGION_CODE": "S3",
+				"PP_SOURCE_CODE": "S1",
+				"PP_PACKAGE_TYPE": "X",
+				"PP_PACKAGE_NO": "1.03108256E8",
+				"PP_SIM_SERIAL_NO_VC": "1310176600898",
+				"PP_VAT_RATE": "7.0",
+				"PP_SHIFT": "1",
+				"PP_TOTAL_AMT": [
+					"1000.0",
+					"934.58"
+				],
+				"PP_TOTAL_VAT": "65.42",
+				"PP_PAY_TYPE_CODE": "CA",
+				"PP_PAID_AMT": [
+					"1000.0",
+					"0.0",
+					"0.0"
+				],
+				"PP_DOC_LOCATION": "1004",
+				"PP_DOC_TYPE": "W-CO",
+				"PP_USER_ID": "PATJP529",
+				"PP_TUX_CODE": "0"
+			}
+		}
+	}
+}

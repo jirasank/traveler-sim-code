@@ -1,0 +1,66 @@
+<!--<div class="container " onclick ="javascript:toggleFullScreen();">
+  <div class="left" >
+   COUNTER:<span class="color-font-red">&nbsp;1&nbsp;</span>OFFICE:&nbsp;<span class="font-white small-5 medium-4">Mr.Somchai JaiDee</span>
+  </div>
+  <div class="right" >
+   DATE TIME:&nbsp;<span class="color-font-green">WED 04 OCT 2017</span><span class="font-white">&nbsp;23:11</span>
+  </div>
+</div>-->
+<!--<div style="width:100%;" class="text-center">
+<table style="width:100%;border: 2px solid blue">
+  <tr>
+    <td style="width:55%;background-color: white">
+      <div style="background-color: #8cc540;height:100%;border-bottom-right-radius: 15px" >123</div>
+    </td>
+    <td style="background-color: yellow">
+      456
+    </td>
+  </tr>
+</table>
+</div>
+<div class="row " style="height:80px">
+      <div class="small-7 medium-7 columns " style="width:55%; border: 2px solid red">Status Reason</div>
+      <div class="small-5 medium-5 columns " style="position: relative">
+        <div style="background: white;position: absolute;left:0;top:0"> Traveler SIM</div>
+      </div>
+ </div>-->
+
+<div class="containerMain" (window:visibilitychange)="onBlur($event)">
+  <div class="leftMain">
+    <div class="container middle column " >
+
+      <div class="left ">
+        <div class="divImage middle " >
+          <!--<div class="circle middle">1</div>-->
+
+        </div>
+        <span class="font-white middle" style="padding-top:4%;width:55%;font-size:1.2vw;">Mr.Somchai JaiDee</span>
+
+      </div>
+      <div class="right font-white text-left" style="font-size:1.4vw">
+        <div>
+          {{ myDate| date:'mediumTime'}}<br><small>{{ myDate| date:'EE dd MMM yyyy'|uppercase}}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rightMain">
+    <div style="width:100%;background-color: #8cc540;position: relative">
+      <div class="containerTab">
+        <div class="left middle tabLeft" [ngClass]="{'tab_select': tab==1,'tab_unselect': tab != 1}" (click)="setAllTabClass(1)">Traveler SIM</div>
+        <div class="right ">
+          <div class="middle tabRight" [ngClass]="{'tab_select': tab==2,'tab_unselect': tab != 2}" (click)="setAllTabClass(2)">SIM 2 Fly</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div style="position: absolute;left:0;top:0">
+   <div style="cursor: move;float:left" onclick="javascript:toggleFullScreen();"><img  src="assets/images/full-screen.png" class="image"  /></div>
+   <!--<div style="cursor: pointer;float: left" > <img  src="assets/images/minimize.png" width="30" height="30"/></div>-->
+</div>
+
+</div>
+
+ <!--<button class="button" [ngClass]="{'btn_select': tab==1,'btn_unselect': tab != 1}" (click)="setAllmyClass(1)">Traveller SIM</button>
+ <button class="button" [ngClass]="{'btn_select': tab==2,'btn_unselect': tab != 2}" (click)="setAllmyClass(2)">SiM2Fly</button>-->

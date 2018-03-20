@@ -1,0 +1,77 @@
+<!--<div class="flex-item container">
+  <div class="caption-box" appSetAttribute [dirColor]="'white'" [dirBackgroundColor]="packages.color">
+    <div class="content-title textLeft" >     
+      {{packages.id}}
+    </div>
+  </div>
+  <div class="title" appSetAttribute [dirColor]="packages.color" >
+    {{packages.day}}
+  </div>
+   <div class="title-speed ">
+    max speeds
+  </div>
+   <div class="title" appSetAttribute [dirColor]="packages.color" >
+    {{packages.speed}}<span class="title-speed" >/384Kbps</span>
+  </div>
+   <div class="title-speed ">
+    {{packages.spec}}
+  </div>
+   <div class="title-price">
+   ฿{{packages.price}}
+  </div>
+    <div class="divButtonBottom">
+       <button class="button" (click)="onSelect()">Add</button>
+    </div>
+  <div class="textRight logo">
+    <img class="image" src="assets/images/hot-button-hi.png" />    
+  </div>  
+</div>-->
+
+<div style="position: relative;padding-top:2em;">  
+  <div class="circle middle" style="position:absolute;top:0;left:35.5%">
+    {{packages.character}}
+  </div>
+  
+  <div class="flex-item " style="margin-left: 1.2em;margin-top: 0" (click)="onCountSelect()">   
+    
+    <div *ngIf="packages.hot == 'Y'" class="logo">
+      <img class="imagelogo" src="assets/images/hot.png" />
+    </div>
+    <div class="title-day ">
+      {{packages.day}}
+    </div>
+    <div style="text-align: left;padding-left: 0.2em;">
+      <img class="image" src='assets/images/icon-net_call.png'>
+      <div style='vertical-align:middle; display:inline;' class="title-speed">
+        Internet&nbsp;{{packages.speed}}
+      </div>
+    </div>
+    <div style="text-align: left;padding-left: 0.2em;padding-top:0.2em">
+      <img class="image" src='assets/images/world.png'>
+      <div style='vertical-align:middle; display:inline;' class="title-speed">
+        Call & Text
+      </div>
+    </div>
+    <div class="title-speed textRight">
+      &nbsp;&nbsp;<span style="font-size:1.5em;letter-spacing: -0.1em"> {{packages.credit}}</span> &nbsp;{{packages.call_text_unit}}
+
+
+    </div>
+    <div style="padding:0.3em">
+      <div class="lineBorder"></div>
+    </div>
+    <div class="containerBottom ">
+      <div class="left title-des ">
+        <div [innerHTML]="packages.des"></div>
+        <!--{{packages.des}}-->
+      </div>
+      <div class="right title-price">
+        {{packages.price | number:'1.0'}}<span style="font-size: 0.4em;color:black;font-weight: normal">&nbsp;{{packages.price_unit}}</span>
+
+      </div>
+    </div>
+
+    
+  </div>
+  <div class="divImage middleVerticalRight " *ngIf="packages.count">+{{packages.count}}</div>
+</div>

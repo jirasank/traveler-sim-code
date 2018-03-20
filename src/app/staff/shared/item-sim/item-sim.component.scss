@@ -1,0 +1,72 @@
+@import "../../../../assets/scss/util/color";
+// th, td {
+//     border: 1px solid black;
+//     border-collapse: collapse;
+// }
+// td div {
+//     background-color: green;
+//     width:100%;
+//     height:100%;
+//     margin: 0;
+//     padding:0;
+// }
+
+.imageSim{
+    background: url("../../../../assets/images/sim-gray.png") no-repeat center center ;       
+    background-size:contain;   
+    width: 2em;
+    height:3em;
+}
+.image{
+    width:20px;
+    height: 20px;
+}
+.circle{
+    border-radius: 50%;
+    width: 0.8em;
+    height: 0.8em;
+    background: $ms-light-green-1; 
+   
+  //  float: left;   
+}
+.circleError{
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    background: $red1-color; 
+  
+  //  float: left;   
+}
+ .circleStep0{
+    border-radius: 50%;
+    width: 0.8em;
+    height: 0.8em;
+    background: #a9aaab; 
+  
+  //  float: left;   
+}
+
+.containerTab {
+    display: flex;  
+   // border-top-right-radius: 20px;
+    //border-top-left-radius: 20px;
+  //  background-color: white;
+    width:100%;
+   
+  
+}
+.left {
+    display: flex;
+    font-size: 2.5em;   
+   // color: $mc-brown;    
+    width: 25%;
+   // padding-left: 20px;
+}
+.right{
+    display: flex;
+   font-size: 1.2em;     
+    justify-content: flex-end;
+    width: 75%;    
+  //  margin-right: 0;
+   // padding-right: 5%;
+}

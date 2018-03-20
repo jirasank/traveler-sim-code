@@ -1,0 +1,11 @@
+{
+  "resultCode": "20000",
+  "resultMessage": "Create receipt is success",
+  "receipts": [
+    {
+      "receiptId": "2087867",
+      "receiptCompany": "WDS",
+      "receiptNo": "5002171200000001"
+    }
+  ]
+}

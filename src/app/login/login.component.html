@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="header-image" style="background-image: url(assets/images/logo/banner.png);"></div>
+</div>
+<div class="row">
+  <div class="twelve columns">
+      <div class="row">
+        <div class="small-10 large-6 columns small-offset-1 large-offset-3 headBody">
+          <div class="row">
+            <div class="loginIcon fixedColumn">
+              <img src="assets/images/logo/loginIcon.png" alt="testLoginIcon">
+            </div>
+            <div class="header-sub-header-container">
+              <div class="row header-text">
+                LOG IN
+              </div>
+              <div class="row sub-header-text">
+                Enter your username and password to log on
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-10 large-6 columns small-offset-1 large-offset-3 body">
+          <input [(ngModel)]="username" type="text" placeholder="&#xf2c0;   username" class="text-input" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-10 large-6 columns small-offset-1 large-offset-3 body">
+          <input [(ngModel)]="password" type="password" placeholder="&#xf084;   password" class="text-input" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-10 large-6 columns small-offset-1 large-offset-3 body">
+          <button (click)="onSubmit()" class="button" style="width:100%; border-radius:5px">Log in</button>
+        </div>
+      </div>
+  </div>
+</div>

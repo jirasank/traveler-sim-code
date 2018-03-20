@@ -1,0 +1,17 @@
+<div class="content boxcon" >
+  <div class="caption-box">
+    <div class="content-title textRight">
+      Selected Item
+    </div>
+  </div>
+  <div style="overflow-y:auto;height:82%;" #scrollMe [scrollTop]="scrollMe.scrollHeight"  >
+    <ul class="items">
+      <li *ngFor="let select of packageSelectItem;let i=index" (dblclick)="removeSelect(i)" appSetAttribute [dirBackgroundColorAlpha]="select.color" >
+        <div class="badge" appSetAttribute [dirBackgroundColor]="select.color">{{select.id}}</div><span>{{select.day}}&nbsp;&nbsp;{{select.speed}}&nbsp;&nbsp;฿{{select.price}}</span>
+         <span class="textRight logo ">
+          <img class="image" src="assets/images/Button-Delete-icon.png"  (click)="removeSelect(i)" />    
+        </span>          
+      </li>
+    </ul>
+  </div>
+</div>

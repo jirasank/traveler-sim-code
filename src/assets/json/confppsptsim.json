@@ -1,0 +1,19 @@
+{
+	"resultCode": "20000",
+	"developerMessage": "Success",
+	"data": {
+		"A_ConfPPSPTSimResponse": {
+			"outbuf": {
+				"OutmobileInfo": [
+					{
+						"PP_MOBILE_NO": "0932019203",
+						"PP_TRANS_ID": "201711010000000354",
+						"PP_STATUS": "SUCCESS_1",
+						"PP_REMARK":"remark"
+					}
+				],
+				"PP_TUX_CODE": "0"
+			}
+		}
+	}
+}
