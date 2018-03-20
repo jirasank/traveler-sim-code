@@ -244,8 +244,8 @@ export class FinishComponent implements OnInit {
     //       //  }
     //   //   ] ;
 
-    this.saveReceiptPlugin();
-    this.saveReceiptTDM();
+   // this.saveReceiptPlugin();
+   // this.saveReceiptTDM();
   }
 
   saveReceiptTDM() {

@@ -677,7 +677,7 @@ export class ProcessSimComponent implements OnInit {
     mobileProcessStatus(sim, params3: ITranSTs): Promise<any> {
         return new Promise((resolve, reject) => {
             // try {
-            this.doQueryStatus(sim, params3, 0, 0, (err) => {//for time 10
+            this.doQueryStatus(sim, params3, 0, 90, (err) => {//for time 10
                 if (err) {
                     console.log('doQueryStatus promise error');
                     resolve({ resultCode: '99999', data: 'doQueryStatus error' });

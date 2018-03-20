@@ -22,8 +22,16 @@ export class PrintService {
         console.log('create receipt plugin fail', err); // should not do
         this.alertConfirmService.openError("Error:<br>" + err);
       } else {
-        console.log('receipt:',arryPrint);
+       
+         let strJson = JSON.stringify(arryPrint);
+         
+        console.log('receipt:',strJson);
         //********************************** */
+        let arryObj = JSON.parse(strJson);
+      //  let str = JSON.parse(arryObj[0]);
+        console.log('json string:',arryObj);
+        let PP_RECEIPT_LOCATION = arryObj[0].PP_RECEIPT_LOCATION;
+        let PP_RECEIPT_DATE = arryObj[0].PP_RECEIPT_DATE;
 
 
         console.log('20000 create receipt plugin completed');

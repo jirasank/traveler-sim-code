@@ -138,38 +138,36 @@ export class ServiceApiService {
 		// return this.authHttpService.post(this.menuAPI, obj).toPromise();    
      return this.http.get('assets/json/pkg.json').map((res: any) => res.json()).toPromise(); 		
 	}
-  getMobileBySim(serial: string):any{    
-   	let obj = {
-			PP_SERVICE_OPTION: "A",
-			PP_SIM_SERIAL_NO_VC: serial
-		};		
-    console.log("Request getPPSimSt2:",obj);
-		this.menuAPI = '/posairport/getPPSimSt2';
-		return this.authHttpService.post(this.menuAPI, obj).toPromise();
-  }
   // getMobileBySim(serial: string):any{    
-  //      if(serial == "1111111111111"){
-  //         return this.http.get('assets/json/mobilebysim1.json').map((res: any) => res.json()).toPromise(); 
-  //       // return this.http.get('assets/json/mobilebysim1.json').map(res => res.json());
-  //     } else if(serial == "2222222222222"){
-  //        return this.http.get('assets/json/mobilebysim2.json').map((res: any) => res.json()).toPromise(); 
-  //           // return this.http.get('assets/json/mobilebysim2.json').map(res => res.json());
-  //        } else if(serial == "3333333333333"){
-  //           return this.http.get('assets/json/mobilebysim3.json').map((res: any) => res.json()).toPromise(); 
-  //            //return this.http.get('assets/json/mobilebysim3.json').map(res => res.json());
-  //        } else if(serial == "4444444444444"){
-  //           return this.http.get('assets/json/mobilebysim4.json').map((res: any) => res.json()).toPromise(); 
-  //            //return this.http.get('assets/json/mobilebysim4.json').map(res => res.json());
-  //         } else if(serial == "1540964977153"){
-  //            return this.http.get('assets/json/mobilebysim.json').map((res: any) => res.json()).toPromise(); 
-  //           // return this.http.get('assets/json/mobilebysim.json').map(res => res.json());
-  //        } else {
-  //           return this.http.get('assets/json/mobilebysim5.json').map((res: any) => res.json()).toPromise(); 
-  //           // return this.http.get('assets/json/mobilebysim5.json').map(res => res.json());
-  //        }
-     
-    
-  //  }
+  //  	let obj = {
+	// 		PP_SERVICE_OPTION: "A",
+	// 		PP_SIM_SERIAL_NO_VC: serial
+	// 	};		
+  //   console.log("Request getPPSimSt2:",obj);
+	// 	this.menuAPI = '/posairport/getPPSimSt2';
+	// 	return this.authHttpService.post(this.menuAPI, obj).toPromise();
+  // }
+  getMobileBySim(serial: string):any{    
+       if(serial == "1111111111111"){
+          return this.http.get('assets/json/mobilebysim1.json').map((res: any) => res.json()).toPromise(); 
+        // return this.http.get('assets/json/mobilebysim1.json').map(res => res.json());
+      } else if(serial == "2222222222222"){
+         return this.http.get('assets/json/mobilebysim2.json').map((res: any) => res.json()).toPromise(); 
+            // return this.http.get('assets/json/mobilebysim2.json').map(res => res.json());
+         } else if(serial == "3333333333333"){
+            return this.http.get('assets/json/mobilebysim3.json').map((res: any) => res.json()).toPromise(); 
+             //return this.http.get('assets/json/mobilebysim3.json').map(res => res.json());
+         } else if(serial == "4444444444444"){
+            return this.http.get('assets/json/mobilebysim4.json').map((res: any) => res.json()).toPromise(); 
+             //return this.http.get('assets/json/mobilebysim4.json').map(res => res.json());
+          } else if(serial == "1540964977153"){
+             return this.http.get('assets/json/mobilebysim.json').map((res: any) => res.json()).toPromise(); 
+            // return this.http.get('assets/json/mobilebysim.json').map(res => res.json());
+         } else {
+            return this.http.get('assets/json/mobilebysim5.json').map((res: any) => res.json()).toPromise(); 
+            // return this.http.get('assets/json/mobilebysim5.json').map(res => res.json());
+         }
+   }
   // postPrepaidIdentifier (sim: Sim_item, userId,location: any): Promise<any> {
 	
   //    let sCardImage = "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";
@@ -220,8 +218,8 @@ export class ServiceApiService {
  	confPPSPTSim (info: any): Promise<any> {
    this.menuAPI = '/posairport/confPPSPTSim';
    console.log("Request confPPSPTSim:",info);
-	 return this.authHttpService.post(this.menuAPI, info).toPromise();
-  //  return this.http.get('assets/json/confppsptsim.json').map(res => res.json()).toPromise();    
+	//  return this.authHttpService.post(this.menuAPI, info).toPromise();
+    return this.http.get('assets/json/confppsptsim.json').map(res => res.json()).toPromise();    
   }
   getPPFtMt (sSIMfeature): Promise<any> {
 		let obj = {
@@ -230,8 +228,8 @@ export class ServiceApiService {
 		};
 		this.menuAPI = '/posairport/getPPFtMt';
      console.log("Request getPPFtMt:",obj);
-	 	return this.authHttpService.post(this.menuAPI, obj).toPromise();
-   //  return this.http.get('assets/json/getPPFtMt.json').map(res => res.json()).toPromise();
+	 	// return this.authHttpService.post(this.menuAPI, obj).toPromise();
+     return this.http.get('assets/json/getPPFtMt.json').map(res => res.json()).toPromise();
 	}
   listPPPSTSIM (sim, q: string): Promise<any> {
 		let obj = {
@@ -240,15 +238,15 @@ export class ServiceApiService {
 			"PP_MOBILE_NO": sim.mobileNumber
 		};
 		this.menuAPI = '/posairport/listPPPSTSIM';
-     console.log("Request listPPPSTSIM:",obj);
-		return this.authHttpService.post(this.menuAPI, obj).toPromise();
-    // return this.http.get('assets/json/listPPPSTSIM.json').map(res => res.json()).toPromise();
+      console.log("Request listPPPSTSIM:",obj);
+	//	return this.authHttpService.post(this.menuAPI, obj).toPromise();
+     return this.http.get('assets/json/listPPPSTSIM.json').map(res => res.json()).toPromise();
 	}
   getPPReceiptPlugin (info: any): Promise<any> {
 		
-		this.menuAPI = '/posairport/getPPReceipt';
-		return this.authHttpService.post(this.menuAPI, info).toPromise();
-   // return this.http.get('assets/json/getPPReceipt.json').map(res => res.json()).toPromise();
+		// this.menuAPI = '/posairport/getPPReceipt';
+		// return this.authHttpService.post(this.menuAPI, info).toPromise();
+    return this.http.get('assets/json/getPPReceipt.json').map(res => res.json()).toPromise();
 	}
   queryBalance(sMobileNo : string) : Promise<any> {
 		let obj = {
@@ -256,8 +254,8 @@ export class ServiceApiService {
         }; // mobile no convert to MSISDN in service
 		this.menuAPI = '/posairport/queryBalance';
     console.log("Request queryBalance:",obj);
-		return this.authHttpService.post(this.menuAPI, obj).toPromise();
-    // return this.http.get('assets/json/querybalance.json').map(res => res.json()).toPromise();
+	//	return this.authHttpService.post(this.menuAPI, obj).toPromise();
+     return this.http.get('assets/json/querybalance.json').map(res => res.json()).toPromise();
 	}
   //  queryBalance(){
   //    return this.http.get('assets/json/querybalance.json')
@@ -267,15 +265,15 @@ export class ServiceApiService {
         
 		this.menuAPI = '/posairport/createReceipt';
     console.log("Request createReceipt:",info);
-		return this.authHttpService.post(this.menuAPI, info).toPromise();
-    // return this.http.get('assets/json/createReceiptTDM.json').map(res => res.json()).toPromise();
+	//	return this.authHttpService.post(this.menuAPI, info).toPromise();
+     return this.http.get('assets/json/createReceiptTDM.json').map(res => res.json()).toPromise();
 	}
  
   createDocPDF (info: any): Promise<any> {        
 		this.menuAPI = '/posairport/createDocPDF';
     console.log("Request createDocPDF:",info);
-		return this.authHttpService.post(this.menuAPI, info).toPromise();
-    // return this.http.get('assets/json/createDocPDF.json').map(res => res.json()).toPromise();
+	//	return this.authHttpService.post(this.menuAPI, info).toPromise();
+     return this.http.get('assets/json/createDocPDF.json').map(res => res.json()).toPromise();
 	}
 
 }
